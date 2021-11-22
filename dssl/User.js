@@ -1,9 +1,11 @@
 'use strict';
 
 const mongoose = require('mongoose');
+const paginate = require('mongoose-paginate');
+const aggregatePaginate = require('mongoose-aggregate-paginate');
 const Schema = mongoose.Schema;
 
-const UserSchema = new Schema({
+const User = new Schema({
   emailId: { type: String, required: true },
   role: { type: String, required: true },
   isActive: Boolean,
@@ -15,4 +17,7 @@ const UserSchema = new Schema({
   },
 });
 
-module.exports = UserSchema;
+User.plugin(paginate);
+User.plugin(aggregatePaginate);
+
+module.exports = User;

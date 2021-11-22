@@ -1,9 +1,11 @@
 'use strict';
 const commonUserAttributeObject = require('./commonUserAttributes')
 const mongoose = require('mongoose');
+const paginate = require('mongoose-paginate');
+const aggregatePaginate = require('mongoose-aggregate-paginate');
 const Schema = mongoose.Schema;
 
-const registrationDetails = new Schema({
+const FtcNewRegistration = new Schema({
   userAttributes: commonUserAttributeObject,
   registrationFlag: Number,
   loginFlag: Number,
@@ -20,4 +22,7 @@ const registrationDetails = new Schema({
   },
 });
 
-module.exports = registrationDetails;
+FtcNewRegistration.plugin(paginate);
+FtcNewRegistration.plugin(aggregatePaginate);
+
+module.exports = FtcNewRegistration;

@@ -1,9 +1,11 @@
 'use strict';
 
 const mongoose = require('mongoose');
+const paginate = require('mongoose-paginate');
+const aggregatePaginate = require('mongoose-aggregate-paginate');
 const Schema = mongoose.Schema;
 
-const templates = new Schema({
+const MsgTemplate = new Schema({
   gradeGroup: String,
   templateTitle: String,
   templateGroup: String,
@@ -22,4 +24,7 @@ const templates = new Schema({
   }
 });
 
-module.exports = templates;
+MsgTemplate.plugin(paginate);
+MsgTemplate.plugin(aggregatePaginate);
+
+module.exports = MsgTemplate;

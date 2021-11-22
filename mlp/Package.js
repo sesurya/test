@@ -1,9 +1,11 @@
 'use strict';
 
 const mongoose = require('mongoose');
+const paginate = require('mongoose-paginate');
+const aggregatePaginate = require('mongoose-aggregate-paginate');
 const Schema = mongoose.Schema;
 
-const packageDetails = new Schema({
+const Package = new Schema({
   id: { type: Number, required: true },
   status: { type: String, required: true },
   phoneNumber: { type: Number, required: false },
@@ -23,4 +25,7 @@ const packageDetails = new Schema({
   minimize: false,
 });
 
-module.exports = packageDetails;
+Package.plugin(paginate);
+Package.plugin(aggregatePaginate);
+
+module.exports = Package;

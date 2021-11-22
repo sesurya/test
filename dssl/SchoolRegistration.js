@@ -1,9 +1,11 @@
 'use strict';
 
 const mongoose = require('mongoose');
+const paginate = require('mongoose-paginate');
+const aggregatePaginate = require('mongoose-aggregate-paginate');
 const Schema = mongoose.Schema;
 
-const schoolDetails = new Schema({
+const SchoolRegistration = new Schema({
   name: String,
   emailId: String,
   userType: String,
@@ -44,4 +46,7 @@ const schoolDetails = new Schema({
   },
 });
 
-module.exports = schoolDetails;
+SchoolRegistration.plugin(paginate);
+SchoolRegistration.plugin(aggregatePaginate);
+
+module.exports = SchoolRegistration;

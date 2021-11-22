@@ -1,9 +1,11 @@
 'use strict';
 
 const mongoose = require('mongoose');
+const paginate = require('mongoose-paginate');
+const aggregatePaginate = require('mongoose-aggregate-paginate');
 const Schema = mongoose.Schema;
 
-const agencyPartners = new Schema({
+const AgencyPartner = new Schema({
   id: { type: Number, required: true },
   name: { type: String, required: true },
 }, {
@@ -14,5 +16,8 @@ const agencyPartners = new Schema({
   },
 });
 
-module.exports = agencyPartners;
+AgencyPartner.plugin(paginate);
+AgencyPartner.plugin(aggregatePaginate);
+
+module.exports = AgencyPartner;
 

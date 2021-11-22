@@ -1,8 +1,10 @@
 'use strict';
 const mongoose = require('mongoose');
+const paginate = require('mongoose-paginate');
+const aggregatePaginate = require('mongoose-aggregate-paginate');
 const Schema = mongoose.Schema;
 
-const ConfigSchema = new Schema({
+const Config = new Schema({
   pkey: String,
   redirectUrl: String,
 }, {
@@ -10,4 +12,7 @@ const ConfigSchema = new Schema({
   timestamps: true
 });
 
-module.exports = ConfigSchema;
+Config.plugin(paginate);
+Config.plugin(aggregatePaginate);
+
+module.exports = Config;

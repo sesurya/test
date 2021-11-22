@@ -1,9 +1,11 @@
 'use strict';
 
 const mongoose = require('mongoose');
+const paginate = require('mongoose-paginate');
+const aggregatePaginate = require('mongoose-aggregate-paginate');
 const Schema = mongoose.Schema;
 
-const registrationDetails = new Schema({
+const FtcRegistration = new Schema({
   fullName: { type: String, required: true },
   grade: { type: Number, required: true },
   board: { type: String, required: true },
@@ -32,4 +34,7 @@ const registrationDetails = new Schema({
   },
 });
 
-module.exports = registrationDetails;
+FtcRegistration.plugin(paginate);
+FtcRegistration.plugin(aggregatePaginate);
+
+module.exports = FtcRegistration;

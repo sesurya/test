@@ -1,9 +1,11 @@
 'use strict';
 
 const mongoose = require('mongoose');
+const paginate = require('mongoose-paginate');
+const aggregatePaginate = require('mongoose-aggregate-paginate');
 const Schema = mongoose.Schema;
 
-const IpCollectionSchema = new Schema({
+const IpCollection = new Schema({
   hitCount: Number,
   phoneNumber: Number,
   id: Number,
@@ -19,4 +21,7 @@ const IpCollectionSchema = new Schema({
   }
 });
 
-module.exports = IpCollectionSchema;
+IpCollection.plugin(paginate);
+IpCollection.plugin(aggregatePaginate);
+
+module.exports = IpCollection;

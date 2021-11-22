@@ -1,9 +1,11 @@
 'use strict';
 
 const mongoose = require('mongoose');
+const paginate = require('mongoose-paginate');
+const aggregatePaginate = require('mongoose-aggregate-paginate');
 const Schema = mongoose.Schema;
 
-const gradeGroups = new Schema({
+const GradeGroup = new Schema({
   gradeName: { type: String, required: true },
   gradeValue: { type: Number, required: true },
   gradeGroup: { type: String, required: true },
@@ -17,4 +19,7 @@ const gradeGroups = new Schema({
   timestamps: true
 });
 
-module.exports = gradeGroups
+GradeGroup.plugin(paginate);
+GradeGroup.plugin(aggregatePaginate);
+
+module.exports = GradeGroup;

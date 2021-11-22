@@ -1,9 +1,11 @@
 'use strict';
 
 const mongoose = require('mongoose');
+const paginate = require('mongoose-paginate');
+const aggregatePaginate = require('mongoose-aggregate-paginate');
 const Schema = mongoose.Schema;
 
-const cohortCourseReference = new Schema({
+const CohortCourseReference = new Schema({
   cohortId: Number,
   courseId: Number,
 }, {
@@ -14,4 +16,7 @@ const cohortCourseReference = new Schema({
   },
 });
 
-module.exports = cohortCourseReference;
+CohortCourseReference.plugin(paginate);
+CohortCourseReference.plugin(aggregatePaginate);
+
+module.exports = CohortCourseReference;

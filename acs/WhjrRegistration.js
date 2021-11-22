@@ -1,8 +1,10 @@
 'use strict';
 const mongoose = require('mongoose');
+const paginate = require('mongoose-paginate');
+const aggregatePaginate = require('mongoose-aggregate-paginate');
 const Schema = mongoose.Schema;
 
-const registrationDetails = new Schema({
+const WhjrRegistration = new Schema({
   mobile: { type: String, required: true },
   email: String,
   grade: { type: String, required: true },
@@ -34,4 +36,7 @@ const registrationDetails = new Schema({
   },
 });
 
-module.exports = registrationDetails;
+WhjrRegistration.plugin(paginate);
+WhjrRegistration.plugin(aggregatePaginate);
+
+module.exports = WhjrRegistration;

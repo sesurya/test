@@ -1,9 +1,11 @@
 'use strict';
 
 const mongoose = require('mongoose');
+const paginate = require('mongoose-paginate');
+const aggregatePaginate = require('mongoose-aggregate-paginate');
 const Schema = mongoose.Schema;
 
-const registration = new Schema({
+const Registration = new Schema({
   parent_phone_number: { type: Number, required: true },
   moved_poms: String,
   page: String,
@@ -19,4 +21,7 @@ const registration = new Schema({
   },
 });
 
-module.exports = registration;
+Registration.plugin(paginate);
+Registration.plugin(aggregatePaginate);
+
+module.exports = Registration;

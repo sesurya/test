@@ -1,5 +1,7 @@
 'use strict';
 const mongoose = require('mongoose');
+const paginate = require('mongoose-paginate');
+const aggregatePaginate = require('mongoose-aggregate-paginate');
 const Schema = mongoose.Schema;
 
 const stateValue = new Schema({
@@ -33,7 +35,7 @@ const newUserAttributeObject = new Schema({
   utmMedium: String,
 });
 
-const newRegistrationDetails = new Schema({
+const IasWorkshopRegistration = new Schema({
   userAttributes: newUserAttributeObject,
   registrationFlag: Number,
   loginFlag: Number,
@@ -48,4 +50,7 @@ const newRegistrationDetails = new Schema({
   },
 });
 
-module.exports = newRegistrationDetails;
+IasWorkshopRegistration.plugin(paginate);
+IasWorkshopRegistration.plugin(aggregatePaginate);
+
+module.exports = IasWorkshopRegistration;

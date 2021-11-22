@@ -1,9 +1,11 @@
 'use strict';
 
 const mongoose = require('mongoose');
+const paginate = require('mongoose-paginate');
+const aggregatePaginate = require('mongoose-aggregate-paginate');
 const Schema = mongoose.Schema;
 
-const minilearningkit = new Schema({
+const MiniLearningKithiStories = new Schema({
   id: { type: Number, required: true },
   status: { type: String, required: true },
   phoneNumber: { type: Number, required: false },
@@ -23,4 +25,7 @@ const minilearningkit = new Schema({
   minimize: false,
 });
 
-module.exports = minilearningkit;
+MiniLearningKithiStories.plugin(paginate);
+MiniLearningKithiStories.plugin(aggregatePaginate);
+
+module.exports = MiniLearningKithiStories;

@@ -1,6 +1,8 @@
 'use strict';
 
 const mongoose = require('mongoose');
+const paginate = require('mongoose-paginate');
+const aggregatePaginate = require('mongoose-aggregate-paginate');
 const Schema = mongoose.Schema;
 
 const Campaign = new Schema({
@@ -14,5 +16,8 @@ const Campaign = new Schema({
         endDate: 'end_date',
     }
 });
+
+MsgTemplate.plugin(paginate);
+MsgTemplate.plugin(aggregatePaginate);
 
 module.exports = Campaign;

@@ -1,9 +1,11 @@
 'use strict';
 
 const mongoose = require('mongoose');
+const paginate = require('mongoose-paginate');
+const aggregatePaginate = require('mongoose-aggregate-paginate');
 const Schema = mongoose.Schema;
 
-const schoolList = new Schema({
+const SchoolList = new Schema({
   schoolId: String,
   schoolName: String,
   schoolAbbreviatedNames: Array,
@@ -30,4 +32,7 @@ const schoolList = new Schema({
   },
 });
 
-module.exports = schoolList;
+SchoolList.plugin(paginate);
+SchoolList.plugin(aggregatePaginate);
+
+module.exports = SchoolList;

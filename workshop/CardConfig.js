@@ -1,6 +1,8 @@
 'use strict';
 
 const mongoose = require('mongoose');
+const paginate = require('mongoose-paginate');
+const aggregatePaginate = require('mongoose-aggregate-paginate');
 const Schema = mongoose.Schema;
 
 const teacherDetail = new Schema({
@@ -22,7 +24,7 @@ const subjectDetail = new Schema({
   name: String,
 });
 
-const cardConfig = new Schema({
+const CardConfig = new Schema({
   cardId: String,
   cardColor: String,
   cardBottomText: String,
@@ -40,4 +42,7 @@ const cardConfig = new Schema({
   },
 });
 
-module.exports = cardConfig;
+CardConfig.plugin(paginate);
+CardConfig.plugin(aggregatePaginate);
+
+module.exports = CardConfig;

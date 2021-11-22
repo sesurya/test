@@ -1,6 +1,8 @@
 'use strict';
 
 const mongoose = require('mongoose');
+const paginate = require('mongoose-paginate');
+const aggregatePaginate = require('mongoose-aggregate-paginate');
 const Schema = mongoose.Schema;
 
 const cohortData = new Schema({
@@ -30,7 +32,7 @@ const cityDetail = new Schema({
   city_default_tllms_value: String,
 });
 
-const urlBasedData = new Schema({
+const UrlBasedData = new Schema({
   url: String,
   course_type: String,
   page_title: String,
@@ -50,4 +52,7 @@ const urlBasedData = new Schema({
   }
 });
 
-module.exports = urlBasedData;
+UrlBasedData.plugin(paginate);
+UrlBasedData.plugin(aggregatePaginate);
+
+module.exports = UrlBasedData;

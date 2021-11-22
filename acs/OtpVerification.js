@@ -1,9 +1,11 @@
 'use strict';
 
 const mongoose = require('mongoose');
+const paginate = require('mongoose-paginate');
+const aggregatePaginate = require('mongoose-aggregate-paginate');
 const Schema = mongoose.Schema;
 
-const otpDetails = new Schema({
+const OtpVerification = new Schema({
   phoneNumber: { type: Number, required: true },
   otpValue: Number,
   active: Boolean,
@@ -21,4 +23,7 @@ const otpDetails = new Schema({
   },
 });
 
-module.exports = otpDetails;
+OtpVerification.plugin(paginate);
+OtpVerification.plugin(aggregatePaginate);
+
+module.exports = OtpVerification;
