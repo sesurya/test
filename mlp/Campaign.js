@@ -17,7 +17,7 @@ const Campaign = new Schema({
     }
 });
 
-MsgTemplate.plugin(paginate);
-MsgTemplate.plugin(aggregatePaginate);
+Campaign.plugin(paginate);
+Campaign.plugin(aggregatePaginate);
 
 module.exports = Campaign;
