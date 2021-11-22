@@ -1,3 +1,3 @@
 const importPackages = require("../helper/importHelper");
 
-module.exports = importPackages("workshop");
+module.exports = importPackages("nucleus");
