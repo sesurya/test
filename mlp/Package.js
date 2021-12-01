@@ -16,7 +16,9 @@ const Package = new Schema({
   ls_request_id: { type: String, required: false },
   prospect_id: { type: String, required: false },
   campaign: { type: String, required: false },
-  updated_at: Date
+  updated_at: Date,
+  created_by: String,
+  updated_by: String
 }, {
   collection: 'packages',
   timestamps: {
