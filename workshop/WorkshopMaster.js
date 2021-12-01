@@ -4,7 +4,7 @@ const paginate = require('mongoose-paginate');
 const aggregatePaginate = require('mongoose-aggregate-paginate');
 const Schema = mongoose.Schema;
 
-const Workshop = new Schema({
+const WorkshopMaster = new Schema({
     name: String,
     formattedName: String,
     header: String,
@@ -15,14 +15,14 @@ const Workshop = new Schema({
     created_by: String,
     updated_by: String,
 }, {
-    collection: 'workshops',
+    collection: 'workshopmaster',
     timestamps: {
         createdAt: 'created_at',
         updatedAt: 'updated_at',
     },
 });
 
-Workshop.plugin(paginate);
-Workshop.plugin(aggregatePaginate);
+WorkshopMaster.plugin(paginate);
+WorkshopMaster.plugin(aggregatePaginate);
 
-module.exports = Workshop;
+module.exports = WorkshopMaster;
