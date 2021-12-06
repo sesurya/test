@@ -15,8 +15,8 @@ const Campaign = new Schema({
     timestamps: {
         startDate: 'start_date',
         endDate: 'end_date',
-        createdAt: 'created_at',
-        updatedAt: 'updated_at'
+        createdAt: 'createdAt',
+        updatedAt: 'updatedAt'
     }
 });
 
