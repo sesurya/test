@@ -16,7 +16,7 @@ const PackageBatch = new Schema({
     updatedBy: String,
     notifyEmails: [String]
 }, {
-    collection: 'packagebatchs',
+    collection: 'package_batches',
     timestamps: true
 });
 

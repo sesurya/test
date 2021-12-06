@@ -15,7 +15,7 @@ const WorkshopMaster = new Schema({
     createdBy: String,
     updatedBy: String,
 }, {
-    collection: 'workshopmaster',
+    collection: 'workshop_master',
     timestamps: true
 });
 
