@@ -6,14 +6,17 @@ const aggregatePaginate = require('mongoose-aggregate-paginate');
 const Schema = mongoose.Schema;
 
 const Campaign = new Schema({
-    id: { type: Number, required: true },
+    id: { type: String, required: true, unique: true },
     campaign_name: { type: String, required: true },
-    amount: { type: Number, required: true }
+    amount: { type: Number, required: true },
+    channel: { type: String, required: true }
 }, {
     collection: 'campaigns',
     timestamps: {
         startDate: 'start_date',
         endDate: 'end_date',
+        createdAt: 'created_at',
+        updatedAt: 'updated_at'
     }
 });
 
