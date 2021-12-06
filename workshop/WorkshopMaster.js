@@ -16,10 +16,7 @@ const WorkshopMaster = new Schema({
     updated_by: String,
 }, {
     collection: 'workshopmaster',
-    timestamps: {
-        createdAt: 'created_at',
-        updatedAt: 'updated_at',
-    },
+    timestamps: true
 });
 
 WorkshopMaster.plugin(paginate);

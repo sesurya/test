@@ -17,10 +17,7 @@ const PackageBatch = new Schema({
     notifyEmails: [String]
 }, {
     collection: 'packagebatchs',
-    timestamps: {
-        createdAt: 'created_at',
-        updatedAt: 'updated_at',
-    },
+    timestamps: true
 });
 
 PackageBatch.plugin(paginate);
