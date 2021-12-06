@@ -12,8 +12,8 @@ const WorkshopMaster = new Schema({
     teacherName: String,
     teacherImg: String,
     language: String,
-    created_by: String,
-    updated_by: String,
+    createdBy: String,
+    updatedBy: String,
 }, {
     collection: 'workshopmaster',
     timestamps: true
