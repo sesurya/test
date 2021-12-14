@@ -8,6 +8,8 @@ const Schema = mongoose.Schema;
 const Campaign = new Schema({
     id: { type: String, required: true, unique: true },
     campaign_name: { type: String, required: true },
+    formattedName: { type: String, required: true, unique: true },
+    codePrefix: { type: String, required: true, unique: true },
     amount: { type: Number, required: true },
     channel: { type: String, required: true }
 }, {
