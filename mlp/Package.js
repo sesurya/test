@@ -24,6 +24,7 @@ const Package = new Schema({
   ls_request_id: { type: String, required: false },
   prospect_id: { type: String, required: false },
   campaign: { type: String, required: false },
+  channel: String, 
   batchId: { type: String, required: false },
   createdBy: String,
   updatedBy: String
