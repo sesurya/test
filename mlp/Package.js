@@ -20,6 +20,8 @@ const Package = new Schema({
   state: { type: String, required: false },
   paymentLink: { type: String, required: false },
   price: { type: Number, required: false, default: 0 },
+  product: {type: String,  required: false},
+  activationCode: { type: String, required: true, unique: true },
   cron_flag: { type: Boolean, required: false },
   ls_request_id: { type: String, required: false },
   prospect_id: { type: String, required: false },
