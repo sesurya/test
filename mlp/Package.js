@@ -25,7 +25,7 @@ const Package = new Schema({
   cron_flag: { type: Boolean, required: false },
   ls_request_id: { type: String, required: false },
   prospect_id: { type: String, required: false },
-  campaign: { type: Number, required: true, unique: true },
+  campaign: { type: String, required: false },
   channel: String,
   batchId: { type: String, required: false },
   createdBy: String,
