@@ -8,7 +8,7 @@ const Schema = mongoose.Schema;
 const IpCollection = new Schema({
   hitCount: Number,
   phoneNumber: Number,
-  id: Number,
+  activationCode: String,
   isBlocked: Boolean,
   createdTime: Date,
   type: String,
