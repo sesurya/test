@@ -3,7 +3,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const IpModelSchema = new Schema({
+const IpModel = new Schema({
   hitCount: Number,
   isBlocked: Boolean,
   createdTime: Date,
@@ -12,4 +12,4 @@ const IpModelSchema = new Schema({
   phoneNumber: Number,
 });
 
-module.exports = IpModelSchema;
+module.exports = IpModel;

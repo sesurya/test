@@ -3,7 +3,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const RegistrationDetails = new Schema({
+const GateRegistration = new Schema({
   userId: {type: String, required: true},
   name: {type: String, required: true},
   phoneNumber: {type: Number, required: true},
@@ -35,4 +35,4 @@ const RegistrationDetails = new Schema({
   minimize: false,
 });
 
-module.exports = RegistrationDetails;
+module.exports = GateRegistration;

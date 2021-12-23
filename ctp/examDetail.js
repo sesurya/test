@@ -3,7 +3,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const ExamSchema = new Schema({
+const ExamDetail = new Schema({
   examId: String, // uid
   active: Boolean,
   examType: String, // MockTest, competitive
@@ -29,4 +29,4 @@ const ExamSchema = new Schema({
 });
 
 
-module.exports = ExamSchema;
+module.exports = ExamDetail;

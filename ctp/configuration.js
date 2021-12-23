@@ -3,7 +3,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const ConfigSchema = new Schema({
+const Configuration = new Schema({
   key: {type: String, required: true},
   value: {type: Schema.Types.Mixed, required: true},
 }, {
@@ -13,4 +13,4 @@ const ConfigSchema = new Schema({
   },
 });
 
-module.exports = ConfigSchema;
+module.exports = Configuration;

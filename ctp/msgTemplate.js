@@ -3,7 +3,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const MsgTemplates = new Schema({
+const MsgTemplate = new Schema({
   gradeGroup: String,
   templateGroup: String, // registration, forgotPassword, alert1,, alert2
   timeZoneOffset: Object,
@@ -18,4 +18,4 @@ const MsgTemplates = new Schema({
   senderEmailId: String,
 });
 
-module.exports = MsgTemplates;
+module.exports = MsgTemplate;

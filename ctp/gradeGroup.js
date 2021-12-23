@@ -3,7 +3,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const GradeGroups = new Schema({
+const GradeGroup = new Schema({
   gradeName: {type: String, required: true},
   gradeValue: {type: Number, required: true},
   gradeGroup: {type: String, required: true},
@@ -13,4 +13,4 @@ const GradeGroups = new Schema({
   academicGroup: {type: String, required: true},
 });
 
-module.exports = GradeGroups;
+module.exports = GradeGroup;

@@ -31,7 +31,7 @@ const ExamSchema = new Schema({
   'interestedIn': String, // JEE, NEET, JEE+NEET
 });
 
-const RegistrationDetails = new Schema({
+const StudentDetail = new Schema({
   name: {type: String, required: true},
   phoneNumber: {type: Number, required: true},
   emailId: {type: String, required: true},
@@ -54,4 +54,4 @@ const RegistrationDetails = new Schema({
   minimize: false,
 });
 
-module.exports = RegistrationDetails;
+module.exports = StudentDetail;

@@ -3,7 +3,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const RegistrationDetails = new Schema({
+const MeBnatRegistration = new Schema({
   userId: {type: String, required: true},
   name: {type: String, required: true},
   phoneNumber: {type: Number, required: true},
@@ -39,4 +39,4 @@ const RegistrationDetails = new Schema({
   versionKey: false, // disables __v
 });
 
-module.exports = RegistrationDetails;
+module.exports = MeBnatRegistration;
