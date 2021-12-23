@@ -3,7 +3,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const gradeGroupMapping = new Schema({
+const GradeGroupMapping = new Schema({
   gradeName: {type: String, required: true},
   gradeValue: {type: Number, required: true},
   gradeGroup: {type: String, required: true},
@@ -16,4 +16,4 @@ const gradeGroupMapping = new Schema({
   examName: {type: String, required: true},
 });
 
-module.exports = mongoose.model('gradegroupmapping', gradeGroupMapping);
+module.exports = GradeGroupMapping;

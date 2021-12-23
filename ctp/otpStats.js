@@ -3,7 +3,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const otpDetails = new Schema({
+const OtpDetails = new Schema({
   phoneNumber: Number,
   otpValue: Number,
   isVerified: Boolean,
@@ -18,4 +18,4 @@ const otpDetails = new Schema({
   },
 });
 
-module.exports = mongoose.model('otpVerification', otpDetails);
+module.exports = OtpDetails;

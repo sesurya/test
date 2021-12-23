@@ -3,27 +3,27 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const leadSquaredIdSchema = new Schema({
+const LeadSquaredIdSchema = new Schema({
   '_id': false,
   '46867': String,
   '24692': String,
   'bnat-premium': String,
 });
 
-const examRegistrationAndAttemptSchema = new Schema({
+const ExamRegistrationAndAttemptSchema = new Schema({
   '_id': false,
   'registrationCount': {type: Number, default: 0},
   'examAttemptCount': {type: Number, default: 0},
 });
 
-const examStatsSchema = new Schema({
+const ExamStatsSchema = new Schema({
   '_id': false,
-  'bnat': examRegistrationAndAttemptSchema,
-  'bnat-k10': examRegistrationAndAttemptSchema,
-  'bnat-premium': examRegistrationAndAttemptSchema,
+  'bnat': ExamRegistrationAndAttemptSchema,
+  'bnat-k10': ExamRegistrationAndAttemptSchema,
+  'bnat-premium': ExamRegistrationAndAttemptSchema,
 });
 
-const examSchema = new Schema({
+const ExamSchema = new Schema({
   '_id': false,
   'examName': {type: String, required: true}, // bnat, bnat-k10, bnat-premium
   'examStartDateTime': {type: Number, required: true},
@@ -31,7 +31,7 @@ const examSchema = new Schema({
   'interestedIn': String, // JEE, NEET, JEE+NEET
 });
 
-const registrationDetails = new Schema({
+const RegistrationDetails = new Schema({
   name: {type: String, required: true},
   phoneNumber: {type: Number, required: true},
   emailId: {type: String, required: true},
@@ -42,9 +42,9 @@ const registrationDetails = new Schema({
   hashedPassword: String,
   grade: {type: Number, required: true}, // this will be updated upon each registration
   gradeGroup: String, // this will be updated upon each registration
-  examStatistics: {type: examStatsSchema, required: true}, // this will be updated upon each registration
-  examData: {type: examSchema, required: true}, // this will be updated upon each registration
-  leadSquaredId: leadSquaredIdSchema,
+  examStatistics: {type: ExamStatsSchema, required: true}, // this will be updated upon each registration
+  examData: {type: ExamSchema, required: true}, // this will be updated upon each registration
+  leadSquaredId: LeadSquaredIdSchema,
   lsqStats: Boolean,
 }, {
   timestamps: {
@@ -54,4 +54,4 @@ const registrationDetails = new Schema({
   minimize: false,
 });
 
-module.exports = mongoose.model('student', registrationDetails);
+module.exports = RegistrationDetails;

@@ -3,7 +3,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const lookup = new Schema({
+const Lookup = new Schema({
   type: String,
   key: String,
   page: String,
@@ -15,4 +15,4 @@ const lookup = new Schema({
   },
 });
 
-module.exports = mongoose.model('lookup', lookup);
+module.exports = Lookup;

@@ -3,7 +3,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const registrationDetails = new Schema({
+const RegistrationDetails = new Schema({
   phoneNumber: {type: Number, required: true},
   examName: {type: String, required: true}, // bnat, bnat-k10, bnat-premium
   interestedIn: String, // JEE, NEET, JEE+NEET
@@ -27,4 +27,4 @@ const registrationDetails = new Schema({
   minimize: false,
 });
 
-module.exports = mongoose.model('studentexamdetails', registrationDetails);
+module.exports = RegistrationDetails;

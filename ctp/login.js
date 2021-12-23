@@ -3,7 +3,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const loginDetails = new Schema({
+const LoginDetails = new Schema({
   phoneNumber: {type: Number, required: true},
   password: {type: String, required: true},
   prospectID: String,
@@ -16,4 +16,4 @@ const loginDetails = new Schema({
   },
 });
 
-module.exports = mongoose.model('logindetail', loginDetails);
+module.exports = LoginDetails;

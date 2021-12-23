@@ -3,41 +3,41 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const registrationMetaData = new Schema({
+const RegistrationMetaData = new Schema({
   _id: false,
   regWindowStartDateTime: Number,
   regWindowStopDateTime: Number,
   pageUrl: String,
 });
 
-const gradeMetaData = new Schema({
+const GradeMetaData = new Schema({
   gradeValue: [Number],
   gradeGroup: String,
   academicGroup: String,
 });
 
-const resultMetaData = new Schema({
+const ResultMetaData = new Schema({
   _id: false,
   resultDateTime: Number,
   assessmentReportDateTime: Number,
 });
 
-const examData = new Schema({
+const ExamData = new Schema({
   testStartDateTime: Number,
   testEndDateTime: Number,
   examDuration: Number,
   examDurationUnit: String,
 });
 
-const testMetaData = new Schema({
+const TestMetaData = new Schema({
   _id: false,
-  grade: {type: gradeMetaData, required: true},
-  registrationData: registrationMetaData,
-  resultStats: resultMetaData,
-  testData: {type: examData, required: true},
+  grade: {type: GradeMetaData, required: true},
+  registrationData: RegistrationMetaData,
+  resultStats: ResultMetaData,
+  testData: {type: ExamData, required: true},
 });
 
-const buttonMetadata = new Schema({
+const ButtonMetadata = new Schema({
   _id: false,
   override: Number,
   displayStatus: String,
@@ -45,7 +45,7 @@ const buttonMetadata = new Schema({
   buttonTitle: {type: [String], required: true},
 });
 
-const bandMetadata = new Schema({
+const BandMetadata = new Schema({
   _id: false,
   override: Number,
   displayStatus: String,
@@ -61,14 +61,14 @@ const bandMetadata = new Schema({
 });
 
 const BnatPageDetail = new Schema({
-  buttonData: buttonMetadata,
-  bandData: bandMetadata,
-  registrationData: registrationMetaData,
-  resultStats: resultMetaData,
+  buttonData: ButtonMetadata,
+  bandData: BandMetadata,
+  registrationData: RegistrationMetaData,
+  resultStats: ResultMetaData,
   pageData: Object,
   page: String,
   active: Boolean,
-  data: {type: [testMetaData]}
+  data: {type: [TestMetaData]}
 });
 
 module.exports = BnatPageDetail;

@@ -3,25 +3,25 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const gradeData = new Schema({
+const GradeData = new Schema({
   gradeValue: Number,
   gradeGroup: String,
   academicGroup: String,
   questionPaperId: Array,
 });
 
-const registrationMetaData = new Schema({
+const RegistrationMetaData = new Schema({
   regWindowStartDateTime: Date,
   regWindowStopDateTime: Date,
   pageUrl: String,
 });
 
-const testCardData = new Schema({
+const TestCardData = new Schema({
   color: String,
   hasAppeared: Boolean,
 });
 
-const testMetaData = new Schema({
+const TestMetaData = new Schema({
   testStartDateTime: Date,
   testEndDateTime: Date,
   syllabus: String,
@@ -29,10 +29,10 @@ const testMetaData = new Schema({
   duration: String,
   testMode: String,
   target: String,
-  testCard: testCardData,
+  testCard: TestCardData,
 });
 
-const resultMetaData = new Schema({
+const ResultMetaData = new Schema({
   status: String,
   resultDateTime: Date,
   assessmentReportDateTime: Date,
@@ -43,10 +43,10 @@ const BnatTestData = new Schema({
   registrationActiveStatus: Boolean,
   testActiveStatus: Boolean,
   button: String,
-  grade: gradeData,
-  registrationData: registrationMetaData,
-  testData: testMetaData,
-  resultStats: resultMetaData,
+  grade: GradeData,
+  registrationData: RegistrationMetaData,
+  testData: TestMetaData,
+  resultStats: ResultMetaData,
 });
 
 module.exports = BnatTestData;

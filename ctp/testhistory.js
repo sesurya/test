@@ -3,11 +3,11 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const testHistory = new Schema({
+const TestHistory = new Schema({
   testName: String,
   gradeGroup: String,
   testVersion: Number,
   activeVersion: Boolean,
 });
 
-module.exports = mongoose.model('testhistories', testHistory);
+module.exports = TestHistory;
