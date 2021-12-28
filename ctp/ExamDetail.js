@@ -2,6 +2,8 @@
 
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const paginate = require('mongoose-paginate');
+const mongooseAggregatePaginate = require('mongoose-aggregate-paginate');
 
 const ExamDetail = new Schema({
   examId: String, // uid
@@ -22,11 +24,14 @@ const ExamDetail = new Schema({
   examMode: String, // daily, weekly, custom
   isLastExam: Boolean,
 }, {
+  collection : "examdetails",
   timestamps: {
     createdAt: 'created_at',
     updatedAt: 'updated_at',
   },
 });
 
+ExamDetail.plugin(paginate);
+ExamDetail.plugin(mongooseAggregatePaginate);
 
 module.exports = ExamDetail;

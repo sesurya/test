@@ -2,8 +2,10 @@
 
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const paginate = require('mongoose-paginate');
+const mongooseAggregatePaginate = require('mongoose-aggregate-paginate');
 
-const AssessmentMapping = new Schema({
+const AssessmentIdMapping = new Schema({
   assessmentId: String,
   examType: String,
   examName: String,
@@ -15,11 +17,14 @@ const AssessmentMapping = new Schema({
   key: {type: String, required: true},
   tags: Array,
 }, {
+  collection: 'assessmentidmappings',
   timestamps: {
     createdAt: 'created_at',
     updatedAt: 'updated_at',
-  },
+
 });
 
+AssessmentIdMapping.plugin(paginate);
+AssessmentIdMapping.plugin(mongooseAggregatePaginate);
 
-module.exports =  AssessmentMapping;
+module.exports =  AssessmentIdMapping;

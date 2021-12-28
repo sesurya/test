@@ -2,6 +2,8 @@
 
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const paginate = require('mongoose-paginate');
+const mongooseAggregatePaginate = require('mongoose-aggregate-paginate');
 
 const LeadSquaredIdSchema = new Schema({
   '_id': false,
@@ -31,7 +33,7 @@ const ExamSchema = new Schema({
   'interestedIn': String, // JEE, NEET, JEE+NEET
 });
 
-const StudentDetail = new Schema({
+const Student = new Schema({
   name: {type: String, required: true},
   phoneNumber: {type: Number, required: true},
   emailId: {type: String, required: true},
@@ -47,6 +49,7 @@ const StudentDetail = new Schema({
   leadSquaredId: LeadSquaredIdSchema,
   lsqStats: Boolean,
 }, {
+  collection : "students",
   timestamps: {
     createdAt: 'created_at',
     updatedAt: 'updated_at',
@@ -54,4 +57,7 @@ const StudentDetail = new Schema({
   minimize: false,
 });
 
-module.exports = StudentDetail;
+Student.plugin(paginate);
+Student.plugin(mongooseAggregatePaginate);
+
+module.exports = Student;
