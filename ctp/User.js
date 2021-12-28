@@ -6,11 +6,11 @@ const paginate = require('mongoose-paginate');
 const aggregatePaginate = require('mongoose-aggregate-paginate');
 
 const User = new Schema({
-  emailId: {type: String, required: true},
-  role: {type: String, required: true},
+  emailId: { type: String, required: true },
+  role: { type: String, required: true },
   isActive: Boolean,
 }, {
-  collection : "users"
+  collection: "users",
   timestamps: {
     createdAt: 'created_at',
     updatedAt: 'updated_at',
