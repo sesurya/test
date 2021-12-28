@@ -33,10 +33,10 @@ const ExamData = new Schema({
 
 const TestMetaData = new Schema({
   _id: false,
-  grade: {type: GradeMetaData, required: true},
+  grade: { type: GradeMetaData, required: true },
   registrationData: RegistrationMetaData,
   resultStats: ResultMetaData,
-  testData: {type: ExamData, required: true},
+  testData: { type: ExamData, required: true },
 });
 
 const ButtonMetadata = new Schema({
@@ -44,7 +44,7 @@ const ButtonMetadata = new Schema({
   override: Number,
   displayStatus: String,
   statusCode: Number,
-  buttonTitle: {type: [String], required: true},
+  buttonTitle: { type: [String], required: true },
 });
 
 const BandMetadata = new Schema({
@@ -52,7 +52,7 @@ const BandMetadata = new Schema({
   override: Number,
   displayStatus: String,
   statusCode: Number,
-  bandTitle: {type: [String], required: true},
+  bandTitle: { type: [String], required: true },
   examDateFormat: String,
   examBandDuration: Number,
   examBandDurationUnit: String,
@@ -62,7 +62,7 @@ const BandMetadata = new Schema({
   resultBandDurationResetBy: String,
 });
 
-const BnatPageDetail = new Schema({
+const PageDetail = new Schema({
   buttonData: ButtonMetadata,
   bandData: BandMetadata,
   registrationData: RegistrationMetaData,
@@ -70,13 +70,13 @@ const BnatPageDetail = new Schema({
   pageData: Object,
   page: String,
   active: Boolean,
-  data: {type: [TestMetaData]}
-},{
-    collection : "pagedetails",
-    timestamps : true
+  data: { type: [TestMetaData] }
+}, {
+  collection: "pagedetails",
+  timestamps: true
 });
 
-BnatPageDetail.plugin(paginate);
-BnatPageDetail.plugin(mongooseAggregatePaginate);
+PageDetail.plugin(paginate);
+PageDetail.plugin(mongooseAggregatePaginate);
 
-module.exports = BnatPageDetail;
+module.exports = PageDetail;

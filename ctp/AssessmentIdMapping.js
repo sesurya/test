@@ -14,17 +14,17 @@ const AssessmentIdMapping = new Schema({
   examStartTime: Number,
   examStopTime: Number,
   page: String,
-  key: {type: String, required: true},
+  key: { type: String, required: true },
   tags: Array,
 }, {
   collection: 'assessmentidmappings',
   timestamps: {
     createdAt: 'created_at',
     updatedAt: 'updated_at',
-
+  }
 });
 
 AssessmentIdMapping.plugin(paginate);
 AssessmentIdMapping.plugin(mongooseAggregatePaginate);
 
-module.exports =  AssessmentIdMapping;
+module.exports = AssessmentIdMapping;

@@ -40,7 +40,7 @@ const ResultMetaData = new Schema({
   assessmentReportDateTime: Date,
 });
 
-const BnatTestData = new Schema({
+const TestDetail = new Schema({
   testVersion: Number,
   registrationActiveStatus: Boolean,
   testActiveStatus: Boolean,
@@ -49,12 +49,12 @@ const BnatTestData = new Schema({
   registrationData: RegistrationMetaData,
   testData: TestMetaData,
   resultStats: ResultMetaData,
-},{
-    collection : "testdetails",
-    timestamps : true
+}, {
+  collection: "testdetails",
+  timestamps: true
 });
 
-BnatTestData.plugin(paginate);
-BnatTestData.plugin(mongooseAggregatePaginate);
+TestDetail.plugin(paginate);
+TestDetail.plugin(mongooseAggregatePaginate);
 
-module.exports = BnatTestData;
+module.exports = TestDetail;

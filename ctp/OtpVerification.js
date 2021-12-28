@@ -5,7 +5,7 @@ const Schema = mongoose.Schema;
 const paginate = require('mongoose-paginate');
 const mongooseAggregatePaginate = require('mongoose-aggregate-paginate');
 
-const OtpDetail = new Schema({
+const OtpVerification = new Schema({
   phoneNumber: Number,
   otpValue: Number,
   isVerified: Boolean,
@@ -14,14 +14,14 @@ const OtpDetail = new Schema({
   initialOTPAttempt: Date,
   otpCreatedTime: Date,
 }, {
-  collection : "otpverifications",
+  collection: "otpverifications",
   timestamps: {
     createdAt: 'created_at',
     updatedAt: 'updated_at',
   },
 });
 
-OtpDetail.plugin(paginate);
-OtpDetail.plugin(mongooseAggregatePaginate);
+OtpVerification.plugin(paginate);
+OtpVerification.plugin(mongooseAggregatePaginate);
 
-module.exports = OtpDetail;
+module.exports = OtpVerification;

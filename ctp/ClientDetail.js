@@ -5,7 +5,7 @@ const Schema = mongoose.Schema;
 const paginate = require('mongoose-paginate');
 const mongooseAggregatePaginate = require('mongoose-aggregate-paginate');
 
-const ClientDetails = new Schema({
+const ClientDetail = new Schema({
   uuid: String,
   name: String,
   active: Boolean,
@@ -13,14 +13,14 @@ const ClientDetails = new Schema({
   key: String,
   iv: String,
 }, {
-  colletion : "clientdetails",
+  colletion: "clientdetails",
   timestamps: {
     createdAt: 'created_at',
     updatedAt: 'updated_at',
   },
 });
 
-ClientDetails.plugin(paginate);
-ClientDetails.plugin(mongooseAggregatePaginate);
+ClientDetail.plugin(paginate);
+ClientDetail.plugin(mongooseAggregatePaginate);
 
-module.exports = ClientDetails;
+module.exports = ClientDetail;
