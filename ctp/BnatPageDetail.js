@@ -2,6 +2,8 @@
 
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const paginate = require('mongoose-paginate');
+const mongooseAggregatePaginate = require('mongoose-aggregate-paginate');
 
 const RegistrationMetaData = new Schema({
   _id: false,
@@ -69,6 +71,12 @@ const BnatPageDetail = new Schema({
   page: String,
   active: Boolean,
   data: {type: [TestMetaData]}
+},{
+    collection : "pagedetails",
+    timestamps : true
 });
+
+BnatPageDetail.plugin(paginate);
+BnatPageDetail.plugin(mongooseAggregatePaginate);
 
 module.exports = BnatPageDetail;

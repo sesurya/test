@@ -29,6 +29,7 @@ const BnatRegistration = mongoose.Schema({
     "updated_at": Date
 }, {
     collection: 'bnatv2registrations',
+    timestamps : true
 });
 
 BnatRegistration.plugin(paginate);

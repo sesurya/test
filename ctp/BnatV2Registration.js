@@ -2,6 +2,8 @@
 
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const paginate = require('mongoose-paginate');
+const mongooseAggregatePaginate = require('mongoose-aggregate-paginate');
 
 const BnatV2Registration = new Schema({
   name: {type: String, required: true},
@@ -22,10 +24,14 @@ const BnatV2Registration = new Schema({
   password: String,
   hashedPassword: String,
 }, {
+  collection : "bnatv2registrations",
   timestamps: {
     createdAt: 'created_at',
     updatedAt: 'updated_at',
   },
 });
+
+BnatV2Registration.plugin(paginate);
+BnatV2Registration.plugin(mongooseAggregatePaginate);
 
 module.exports = BnatV2Registration;

@@ -2,6 +2,8 @@
 
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const paginate = require('mongoose-paginate');
+const mongooseAggregatePaginate = require('mongoose-aggregate-paginate');
 
 const GradeGroupMapping = new Schema({
   gradeName: {type: String, required: true},
@@ -14,6 +16,12 @@ const GradeGroupMapping = new Schema({
   isPremium: Boolean,
   examType: {type: String, required: true},
   examName: {type: String, required: true},
+},{
+    collection : "gradegroupmappings",
+    timestamps : true
 });
+
+GradeGroupMapping.plugin(paginate);
+GradeGroupMapping.plugin(mongooseAggregatePaginate);
 
 module.exports = GradeGroupMapping;

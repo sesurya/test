@@ -2,6 +2,8 @@
 
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const paginate = require('mongoose-paginate');
+const mongooseAggregatePaginate = require('mongoose-aggregate-paginate');
 
 const MsgTemplate = new Schema({
   gradeGroup: String,
@@ -16,6 +18,12 @@ const MsgTemplate = new Schema({
   landingPage: String,
   smsServiceProvider: Number,
   senderEmailId: String,
+},{
+    collection : "msgtemplates",
+    timestamps : true
 });
+
+MsgTemplate.plugin(paginate);
+MsgTemplate.plugin(mongooseAggregatePaginate);
 
 module.exports = MsgTemplate;

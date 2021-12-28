@@ -2,6 +2,8 @@
 
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const paginate = require('mongoose-paginate');
+const mongooseAggregatePaginate = require('mongoose-aggregate-paginate');
 
 const GradeGroup = new Schema({
   gradeName: {type: String, required: true},
@@ -11,6 +13,12 @@ const GradeGroup = new Schema({
   yearProgress: {type: String, required: true},
   landingPage: {type: String, required: true},
   academicGroup: {type: String, required: true},
+},{
+    collection : "gradegroups",
+    timestamps : true
 });
+
+GradeGroup.plugin(paginate);
+GradeGroup.plugin(mongooseAggregatePaginate);
 
 module.exports = GradeGroup;

@@ -2,6 +2,8 @@
 
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const paginate = require('mongoose-paginate');
+const mongooseAggregatePaginate = require('mongoose-aggregate-paginate');
 
 const GateRegistration = new Schema({
   userId: {type: String, required: true},
@@ -28,11 +30,15 @@ const GateRegistration = new Schema({
   active: Boolean,
   lsqStatus: Boolean,
 }, {
+  collection : "gateregistrations",
   timestamps: {
     createdAt: 'created_at',
     updatedAt: 'updated_at',
   },
   minimize: false,
 });
+
+GateRegistration.plugin(paginate);
+GateRegistration.plugin(mongooseAggregatePaginate);
 
 module.exports = GateRegistration;

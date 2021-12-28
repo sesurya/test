@@ -2,6 +2,8 @@
 
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const paginate = require('mongoose-paginate');
+const mongooseAggregatePaginate = require('mongoose-aggregate-paginate');
 
 const GradeData = new Schema({
   gradeValue: Number,
@@ -47,6 +49,12 @@ const BnatTestData = new Schema({
   registrationData: RegistrationMetaData,
   testData: TestMetaData,
   resultStats: ResultMetaData,
+},{
+    collection : "testdetails",
+    timestamps : true
 });
+
+BnatTestData.plugin(paginate);
+BnatTestData.plugin(mongooseAggregatePaginate);
 
 module.exports = BnatTestData;

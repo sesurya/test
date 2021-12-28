@@ -2,6 +2,8 @@
 
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const paginate = require('mongoose-paginate');
+const mongooseAggregatePaginate = require('mongoose-aggregate-paginate');
 
 const MeBnatRegistration = new Schema({
   userId: {type: String, required: true},
@@ -35,8 +37,12 @@ const MeBnatRegistration = new Schema({
   leadSquaredActivityId: String,
   registeredOn: Date,
 }, {
+  collection : "mebnatregistrations",
   timestamps: true,
   versionKey: false, // disables __v
 });
+
+MeBnatRegistration.plugin(paginate);
+MeBnatRegistration.plugin(mongooseAggregatePaginate);
 
 module.exports = MeBnatRegistration;
