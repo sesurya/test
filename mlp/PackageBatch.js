@@ -12,6 +12,7 @@ const PackageBatch = new Schema({
     noOfPackages: { type: Number, required: false },
     isPrepaid: { type: Boolean, required: false },
     packagePrice: { type: Number, required: false },
+    product: {type: String,  required: false},
     createdBy: String,
     updatedBy: String,
     notifyEmails: [String]
