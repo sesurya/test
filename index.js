@@ -9,6 +9,7 @@ const web = require('./web');
 const nucleus = require('./nucleus');
 const mockTest = require('./mock-test');
 const upscBnat = require('./upsc-bnat');
+const gmap = require('./gmap');
 
 module.exports = {
     acs,
@@ -20,4 +21,5 @@ module.exports = {
     mockTest,
     upscBnat,
     nucleus,
+    gmap
 };
