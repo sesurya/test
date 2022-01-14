@@ -6,7 +6,7 @@ const mongooseAggregatePaginate = require('mongoose-aggregate-paginate');
 
 const Schema = mongoose.Schema;
 
-const IndiaStateCity = new Schema({
+const StateCityPincode = new Schema({
   state: { type: String, required: true },
   city: { type: String, required: true },
   pincode: { type: String, required: true },
@@ -16,7 +16,7 @@ const IndiaStateCity = new Schema({
   timestamps: true
 });
 
-IndiaStateCity.plugin(paginate);
-IndiaStateCity.plugin(mongooseAggregatePaginate);
+StateCityPincode.plugin(paginate);
+StateCityPincode.plugin(mongooseAggregatePaginate);
 
-module.exports = IndiaStateCity;
+module.exports = StateCityPincode;
