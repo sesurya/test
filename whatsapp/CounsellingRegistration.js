@@ -30,7 +30,7 @@ const CounsellingRegistration = new Schema({
   minimize: false,
 });
 
-Package.plugin(paginate);
-Package.plugin(aggregatePaginate);
+CounsellingRegistration.plugin(paginate);
+CounsellingRegistration.plugin(aggregatePaginate);
 
 module.exports = CounsellingRegistration;
