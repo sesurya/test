@@ -18,7 +18,6 @@ const CounsellingRegistration = new Schema({
     statusFlag: Boolean,
     lsqStats: Boolean,
     optin: Boolean,
-    updated_at: Boolean,
     utmSource: String,
     lsqActivityId: String
     
