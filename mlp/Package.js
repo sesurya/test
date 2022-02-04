@@ -28,6 +28,8 @@ const Package = new Schema({
   campaign: { type: String, required: false },
   channel: String,
   batchId: { type: String, required: false },
+  salesEmail: { type: String, required: false },
+  auto_registration_status: { type: String, required: false },
   createdBy: String,
   updatedBy: String
 }, {
