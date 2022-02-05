@@ -25,6 +25,7 @@ const PreboardRegistration = new Schema({
   state: { type: String, required: true },
   city: { type: String, required: true },
   examId: { type: String, required: true },
+  eoId: { type: String, required: true },
   slotTime: { type: String, required: true },
   isPaidUser: { type: Boolean, required: true },
   password: { type: String, required: true },
