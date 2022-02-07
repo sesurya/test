@@ -27,7 +27,9 @@ const WhjrRegistration = new Schema({
   courseType: String,
   iscronjobRan: Boolean,
   activity: Array,
-  activities: Array
+  activities: Array,
+  prospectId: String,
+  lsRequestID: String
 }, {
   collection: 'whjrregistrations',
   timestamps: {
