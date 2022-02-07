@@ -12,8 +12,10 @@ const PreboardRegistration = new Schema({
   emailId: { type: String, required: true },
   status: { type: String, required: true },
   notificationDetails: {
-    smsStatus: { type: String, required: true },
-    emailStatus: { type: String, required: true }
+    smsCounter: { type: Number, required: true, default: 0 },
+    smsStatus: { type: String, required: true, default: 'pending' },
+    emailCounter: { type: Number, required: true, default: 0 },
+    emailStatus: { type: String, required: true, default: 'pending' }
   },
   url: { type: String, required: true },
   utmCampaign: { type: String, required: true },
