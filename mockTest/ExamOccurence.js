@@ -8,6 +8,8 @@ const Schema = mongoose.Schema;
 const ExamOccurence = new Schema({
     eoId: { type: String, required: true },
     status: { type: String, required: true },
+    examType: { type: String, required: true },
+    description: { type: String, required: true },
     grade: { type: Array, required: true },
     board: { type: Array, required: true },
     stream: { type: Array, required: true },
