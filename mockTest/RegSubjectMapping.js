@@ -36,7 +36,7 @@ const RegSubjectMapping = new Schema({
     timestamps: true
 });
 
-RegSubjectMapping.index({ regId: 1, subject: 1 }, { unique: true });
+RegSubjectMapping.index({ userId: 1, subject: 1 }, { unique: true });
 RegSubjectMapping.plugin(paginate);
 RegSubjectMapping.plugin(aggregatePaginate);
 
