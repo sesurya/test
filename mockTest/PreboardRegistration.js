@@ -10,7 +10,12 @@ const PreboardRegistration = new Schema({
   phoneNumber: { type: Number, required: true },
   name: { type: String, required: true },
   emailId: { type: String, required: true },
-  status: { type: String, required: true },
+  status: {
+    type: String,
+    enum: ["exam_registered", "exam_attended", 'result_not_published', "result_published"],
+    required: true,
+    default: "exam_registered"
+  },
   notificationDetails: {
     smsCounter: { type: Number, required: true, default: 0 },
     smsStatus: { type: String, required: true, default: 'pending' },

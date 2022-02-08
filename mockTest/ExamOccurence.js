@@ -7,7 +7,15 @@ const Schema = mongoose.Schema;
 
 const ExamOccurence = new Schema({
     eoId: { type: String, required: true },
-    status: { type: String, required: true },
+    status: {
+        type: String,
+        enum: ["initiated", "approved",
+            'registration_open', "registration_closed",
+            "exam_conduction_pending", "exam_conduction_ongoing",
+            "exam_conduction_closed", "result_published"],
+        required: true,
+        default: "initiated"
+    },
     examType: { type: String, required: true },
     description: { type: String, required: true },
     grade: { type: Array, required: true },
