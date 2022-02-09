@@ -29,7 +29,7 @@ const Package = new Schema({
   channel: String,
   batchId: { type: String, required: false },
   salesEmail: { type: String, required: false },
-  auto_registration_status: { type: String, required: false },
+  autoRegistrationStatus: { type: String, required: false },
   createdBy: String,
   updatedBy: String
 }, {
