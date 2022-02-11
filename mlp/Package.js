@@ -30,7 +30,7 @@ const Package = new Schema({
   batchId: { type: String, required: false },
   salesEmail: { type: String, required: false },
   autoRegistrationStatus: { type: String, required: false },
-  serialNo: { type: String, required: false},
+  serialNo: { type: Number, required: false},
   createdBy: String,
   updatedBy: String
 }, {
