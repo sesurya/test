@@ -28,6 +28,9 @@ const Package = new Schema({
   campaign: { type: String, required: false },
   channel: String,
   batchId: { type: String, required: false },
+  salesEmail: { type: String, required: false },
+  autoRegistrationStatus: { type: String, required: false },
+  packageUpdatedDate: { type: Date, required: false},
   createdBy: String,
   updatedBy: String
 }, {

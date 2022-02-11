@@ -10,6 +10,18 @@ const PreboardRegistration = new Schema({
   phoneNumber: { type: Number, required: true },
   name: { type: String, required: true },
   emailId: { type: String, required: true },
+  status: {
+    type: String,
+    enum: ["exam_registered", "exam_attended", 'result_not_published', "result_published"],
+    required: true,
+    default: "exam_registered"
+  },
+  notificationDetails: {
+    smsCounter: { type: Number, required: true, default: 0 },
+    smsStatus: { type: String, required: true, default: 'pending' },
+    emailCounter: { type: Number, required: true, default: 0 },
+    emailStatus: { type: String, required: true, default: 'pending' }
+  },
   url: { type: String, required: true },
   utmCampaign: { type: String, required: true },
   utmSource: { type: String, required: true },
@@ -20,6 +32,7 @@ const PreboardRegistration = new Schema({
   state: { type: String, required: true },
   city: { type: String, required: true },
   examId: { type: String, required: true },
+  eoId: { type: String, required: true },
   slotTime: { type: String, required: true },
   isPaidUser: { type: Boolean, required: true },
   password: { type: String, required: true },

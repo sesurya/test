@@ -14,7 +14,9 @@ const ExamData = new Schema({
 
 const ExamDetail = new Schema({
   examId: { type: String, required: true },
+  eoId: { type: String, required: true },
   active: Boolean,
+  status: { type: String, required: true },
   grade: { type: Number, required: true },
   board: { type: String, required: true },
   stream: { type: String, required: true },
