@@ -40,7 +40,7 @@ const ExamOccurence = new Schema({
         ecClosedBy: { type: String, required: true },
         resultPublishedBy: { type: String, required: true },
     },
-    examSchedules: { type: Object, required: true },
+    timetables: { type: Array, required: false, default: [] },
     source: { type: String, required: true }
 }, {
     collection: 'examoccurences',
