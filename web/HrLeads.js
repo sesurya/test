@@ -5,9 +5,8 @@ const paginate = require('mongoose-paginate');
 const aggregatePaginate = require('mongoose-aggregate-paginate');
 const Schema = mongoose.Schema;
 
-const HrLeads = new Schema({
+const HrLeadsForm = new Schema({
     Firstname: String,
-    gender: String,
     Phone:String,
     EmailAddress: String,
     mx_City:String,
@@ -15,6 +14,7 @@ const HrLeads = new Schema({
     mx_Date_of_Birth:String,
     mx_Educational_Qualification:String,
     mx_Graduation_Year:String,
+    mx_Resume_URL:String,
     mx_Gender:String,
     mx_Course:String,
     mx_Source_of_Lead:String,
@@ -26,13 +26,19 @@ const HrLeads = new Schema({
     mx_Course_Name:String,
     slugName:String,
     Website:String,
+    createdAt: Date,
+    updatedAt: Date,
+
+    lsRequestID: String,
+    lsqStats: Boolean,
+    prospectId: String,
 
 }, {
     timestamps: true,
     collection: 'hrleads'
 });
 
-HrLeads.plugin(paginate);
-HrLeads.plugin(aggregatePaginate);
+HrLeadsForm.plugin(paginate);
+HrLeadsForm.plugin(aggregatePaginate);
 
-module.exports = HrLeads;
+module.exports = HrLeadsForm;
