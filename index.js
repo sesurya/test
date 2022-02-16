@@ -11,6 +11,7 @@ const nucleus = require('./nucleus');
 const mockTest = require('./mock-test');
 const upscBnat = require('./upsc-bnat');
 const gmap = require('./gmap');
+const notification = require('./notification')
 
 module.exports = {
     acs,
@@ -23,5 +24,6 @@ module.exports = {
     mockTest,
     upscBnat,
     nucleus,
-    gmap
+    gmap,
+    notification
 };
