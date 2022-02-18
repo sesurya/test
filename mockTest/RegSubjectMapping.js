@@ -16,23 +16,12 @@ const RegSubjectMapping = new Schema({
         required: true
     },
     notificationDetails: {
-        smsCounter: { type: Number, required: true, default: 0 },
-        emailCounter: { type: Number, required: true, default: 0 },
-        smsStatus: {
-            type: String,
-            enum: ['pending', "success", "failed"],
-            required: true,
-            default: 'pending'
-        },
-        emailStatus: {
-            type: String,
-            enum: ['pending', "success", "failed"],
-            required: true,
-            default: 'pending'
-        }
+        type: Array,
+        required: true,
+        default: []
     }
 }, {
-    collection: 'reg_subject_mapping',
+    collection: 'regsubjectmappings',
     timestamps: true
 });
 
