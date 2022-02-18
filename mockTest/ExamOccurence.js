@@ -17,6 +17,8 @@ const ExamOccurence = new Schema({
         default: "initiated"
     },
     examType: { type: String, required: true },
+    testName: { type: String, required: true},
+    page: {type: String, required: true},
     description: { type: String, required: true },
     grade: { type: Array, required: true },
     board: { type: Array, required: true },
