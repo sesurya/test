@@ -18,6 +18,7 @@ const Package = new Schema({
   grade: { type: String, required: false },
   board: { type: String, required: false },
   state: { type: String, required: false },
+  communicationLanguage:{type: String, required: false},
   paymentLink: { type: String, required: false },
   price: { type: Number, required: false, default: 0 },
   product: {type: String,  required: false},
