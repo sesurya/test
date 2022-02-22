@@ -31,6 +31,10 @@ const Package = new Schema({
   salesEmail: { type: String, required: false },
   autoRegistrationStatus: { type: String, required: false },
   serialNo: { type: Number, required: false},
+  paidAt: {type: Date, required: false},
+  paymentLinkSent: {type: Date, required: false},
+  registertedAt: {type: Date, required: false},
+  detailsSavedAt: {type: Date, required: false},
   createdBy: String,
   updatedBy: String
 }, {
