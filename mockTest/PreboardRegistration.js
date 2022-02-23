@@ -41,7 +41,7 @@ const PreboardRegistration = new Schema({
   lsqStats: Boolean,
   active: Boolean,
   leadId: String,
-  activityId: String,
+  psleadId: String,
   premiumId: String,
   profileId: String,
   salesForceId: String,
