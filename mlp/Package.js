@@ -18,6 +18,7 @@ const Package = new Schema({
   grade: { type: String, required: false },
   board: { type: String, required: false },
   state: { type: String, required: false },
+  communicationLanguage:{type: String, required: false},
   paymentLink: { type: String, required: false },
   price: { type: Number, required: false, default: 0 },
   product: {type: String,  required: false},
@@ -31,6 +32,10 @@ const Package = new Schema({
   salesEmail: { type: String, required: false },
   autoRegistrationStatus: { type: String, required: false },
   serialNo: { type: Number, required: false},
+  paidAt: {type: Date, required: false},
+  paymentLinkSent: {type: Date, required: false},
+  registertedAt: {type: Date, required: false},
+  detailsSavedAt: {type: Date, required: false},
   createdBy: String,
   updatedBy: String
 }, {
