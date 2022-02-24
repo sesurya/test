@@ -20,7 +20,7 @@ const FreeTrialUsers = new Schema({
   },
 });
 
-FtcNewRegistration.plugin(paginate);
-FtcNewRegistration.plugin(aggregatePaginate);
+FreeTrialUsers.plugin(paginate);
+FreeTrialUsers.plugin(aggregatePaginate);
 
-module.exports = FtcNewRegistration;
+module.exports = FreeTrialUsers;
