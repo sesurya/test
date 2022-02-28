@@ -15,6 +15,7 @@ const Package = new Schema({
   parentName: { type: String, required: false },
   city: { type: String, required: false },
   pincode: { type: Number, required: false },
+  address: { type: String, required: false },
   grade: { type: String, required: false },
   board: { type: String, required: false },
   state: { type: String, required: false },
