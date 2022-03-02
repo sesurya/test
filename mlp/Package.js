@@ -35,6 +35,7 @@ const Package = new Schema({
   paymentLinkSentAt: {type: Date, required: false},
   registertedAt: {type: Date, required: false},
   detailsSavedAt: {type: Date, required: false},
+  
   createdBy: String,
   updatedBy: String
 }, {
