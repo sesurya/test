@@ -27,7 +27,6 @@
     "author": "Byjus",
     "license": "MIT",
     "dependencies": {
-        "@byjusweb/nexemplum": "^0.0.52",
         "lodash": "^4.17.21",
         "mongodb": "^3.7.3",
         "mongoose": "^5.13.13",
