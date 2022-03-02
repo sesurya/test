@@ -15,6 +15,7 @@ const Package = new Schema({
   parentName: { type: String, required: false },
   city: { type: String, required: false },
   pincode: { type: Number, required: false },
+  address: { type: String, required: false },
   grade: { type: String, required: false },
   board: { type: String, required: false },
   state: { type: String, required: false },
@@ -32,10 +33,14 @@ const Package = new Schema({
   salesEmail: { type: String, required: false },
   autoRegistrationStatus: { type: String, required: false },
   serialNo: { type: Number, required: false},
+  mathPercentage: { type: String, required: false },
+  sciencePercentage: { type: String, required: false },
+  languageOfInstruction: { type: String, required: false },
   paidAt: {type: Date, required: false},
-  paymentLinkSent: {type: Date, required: false},
+  paymentLinkSentAt: {type: Date, required: false},
   registertedAt: {type: Date, required: false},
   detailsSavedAt: {type: Date, required: false},
+  
   createdBy: String,
   updatedBy: String
 }, {
