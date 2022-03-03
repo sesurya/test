@@ -8,7 +8,7 @@ const mongooseAggregatePaginate = require('mongoose-aggregate-paginate');
 const QuizUsers = new Schema({
   name: String,
   email: String,
-  class: Number,
+  class: String,
   quizName: String,
   quizFinishTime: String,
   quizQuestionsAttemptCount: Number,
