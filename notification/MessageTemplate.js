@@ -21,7 +21,7 @@ const MessageTemplate = new Schema({
   timestamps: true
 });
 
-MsgTemplate.plugin(paginate);
-MsgTemplate.plugin(aggregatePaginate);
+MessageTemplate.plugin(paginate);
+MessageTemplate.plugin(aggregatePaginate);
 
 module.exports = MessageTemplate;
