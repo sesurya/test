@@ -16,6 +16,7 @@ const MessageTemplate = new Schema({
   ivrLoop: Number,
   ivrVoice: String,
   speechRate: String,
+  provider: String,
 }, {
   collection: 'msgtemplates',
   timestamps: true
