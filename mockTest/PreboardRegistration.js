@@ -5,12 +5,11 @@ const paginate = require('mongoose-paginate');
 const aggregatePaginate = require('mongoose-aggregate-paginate');
 const Schema = mongoose.Schema;
 
-const Registration = new Schema({
+const PreboardRegistration = new Schema({
   userId: String, // uuid
   phoneNumber: { type: Number, required: true },
   name: { type: String, required: true },
   emailId: { type: String, required: true },
-  source: { type: String, required: true, default: "byjus.com" },
   status: {
     type: String,
     enum: ["exam_registered", "exam_attended", 'result_not_published', "result_published"],
@@ -48,14 +47,14 @@ const Registration = new Schema({
   profileId: String,
   salesForceId: String,
 }, {
-  collection: 'registrations',
+  collection: 'preboardregistrations',
   timestamps: {
     createdAt: 'registeredOn',
     updatedAt: 'updated_at',
   },
 });
 
-Registration.plugin(paginate);
-Registration.plugin(aggregatePaginate);
+PreboardRegistration.plugin(paginate);
+PreboardRegistration.plugin(aggregatePaginate);
 
-module.exports = Registration;
+module.exports = PreboardRegistration;
