@@ -51,7 +51,7 @@ const WorkshopMaster = new Schema({
     urlPathAttributes: urlPathValue,
     button: Boolean,
 }, {
-    collection: 'workshop_master',
+    collection: 'iasworkshop',
     timestamps: true
 });
 
