@@ -22,20 +22,13 @@ const firstMidSecValue = new Schema({
     highlight: Array,
 });
 
-const secondMidSecValue = new Schema({
-    titleTop: String,
-    titlebottom: String,
-    highlight: Array,
-});
-
 const urlPathValue = new Schema({
-    imgUrl: String,
+    Url: String,
 });
 const iasworkshop = new Schema({
     firstmidsectionAttributes: firstMidSecValue,
     second: String,
     highlight: Array,
-    secondMidSecAttributes: secondMidSecValue,
     faqSecAttributes: faqSecValue,
     headerAttributes: headerValue,
     urlPathAttributes: urlPathValue,
