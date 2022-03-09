@@ -27,4 +27,4 @@ const PhoneNumberDump = new Schema({
 PhoneNumberDump.plugin(paginate);
 PhoneNumberDump.plugin(aggregatePaginate);
 
-module.exports = ApiMessage;
+module.exports = PhoneNumberDump;
