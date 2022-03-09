@@ -38,7 +38,7 @@ const Package = new Schema({
   languageOfInstruction: { type: String, required: false },
   paidAt: {type: Date, required: false},
   paymentLinkSentAt: {type: Date, required: false},
-  registertedAt: {type: Date, required: false},
+  registeredAt: {type: Date, required: false},
   detailsSavedAt: {type: Date, required: false},
   
   createdBy: String,
