@@ -1,9 +1,11 @@
 'use strict';
 
 const mongoose = require('mongoose');
+const paginate = require('mongoose-paginate');
+const aggregatePaginate = require('mongoose-aggregate-paginate');
 const Schema = mongoose.Schema;
 
-const womensDayPuzzleModel  = new Schema({
+const WomensDayPuzzle = new Schema({
   name: String,
   puzzle_no:Number,
   puzzle_type:String,
@@ -12,5 +14,7 @@ const womensDayPuzzleModel  = new Schema({
 });
 
 
-module.exports = mongoose.model('womensdaypuzzles', womensDayPuzzleModel);
+WomensDayPuzzle.plugin(paginate);
+WomensDayPuzzle.plugin(aggregatePaginate);
 
+module.exports = WomensDayPuzzle;//.model('womensdaypuzzles', womensDayPuzzleModel);

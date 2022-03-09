@@ -1,9 +1,11 @@
 'use strict';
 
 const mongoose = require('mongoose');
+const paginate = require('mongoose-paginate');
+const aggregatePaginate = require('mongoose-aggregate-paginate');
 const Schema = mongoose.Schema;
 
-const geoSendMailAndSaveDataModel = new Schema({
+const GeoSendMailAndSaveData = new Schema({
   nameOfTheStudent: String,
   email: String,
   operatingSystem: String,
@@ -17,4 +19,7 @@ const geoSendMailAndSaveDataModel = new Schema({
   createdAt: Date,
 });
 
-module.exports = mongoose.model('geoSendMailAndSaveData', geoSendMailAndSaveDataModel);
+GeoSendMailAndSaveData.plugin(paginate);
+GeoSendMailAndSaveData.plugin(aggregatePaginate);
+
+module.exports = GeoSendMailAndSaveData;//.model('geoSendMailAndSaveData', geoSendMailAndSaveDataModel);

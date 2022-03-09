@@ -1,9 +1,11 @@
 'use strict';
 
 const mongoose = require('mongoose');
+const paginate = require('mongoose-paginate');
+const aggregatePaginate = require('mongoose-aggregate-paginate');
 const Schema = mongoose.Schema;
 
-const complaintsResolutionModel = new Schema({
+const ComplaintsResolution = new Schema({
   complaintName: String,
   customerName: String,
   customerProfile: String,
@@ -15,6 +17,12 @@ const complaintsResolutionModel = new Schema({
   complaintResolutionDate: Date,
   updatedDate: Date,
   isDeleted: Boolean,
-}, {timestamps: {createdAt: 'created_at'}});
+}, {
+  timestamps: {createdAt: 'created_at'},
+  collection: 'complaintsresolution'
+});
 
-module.exports = mongoose.model('complaintsresolution', complaintsResolutionModel);
+ComplaintsResolution.plugin(paginate);
+ComplaintsResolution.plugin(aggregatePaginate);
+
+module.exports = ComplaintsResolution;

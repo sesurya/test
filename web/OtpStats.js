@@ -1,9 +1,11 @@
 'use strict';
 
 const mongoose = require('mongoose');
+const paginate = require('mongoose-paginate');
+const aggregatePaginate = require('mongoose-aggregate-paginate');
 const Schema = mongoose.Schema;
 
-const otpDetails = new Schema({
+const OtpStats = new Schema({
   phoneNumber: Number,
   otpValue: Number,
   isVerified: Boolean,
@@ -21,4 +23,7 @@ const otpDetails = new Schema({
   },
 });
 
-module.exports = mongoose.model('otpstats', otpDetails);
+OtpStats.plugin(paginate);
+OtpStats.plugin(aggregatePaginate);
+
+module.exports = OtpStats;//.model('otpstats', otpDetails);

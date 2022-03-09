@@ -1,9 +1,11 @@
 'use strict';
 
 const mongoose = require('mongoose');
+const paginate = require('mongoose-paginate');
+const aggregatePaginate = require('mongoose-aggregate-paginate');
 const Schema = mongoose.Schema;
 
-const commonUtilsDbEnvsModel = new Schema({
+const CommonUtilsDbEnvs = new Schema({
   notificationServiceOtp: String,
   notificationServiceOtpClientId: String,
   diwaliHamperOrderFlag: Boolean,
@@ -16,6 +18,12 @@ const commonUtilsDbEnvsModel = new Schema({
   AWS_BUCKET_NAME: String,
   SECRET_CRYPTO_KEY: String,
   sendMail: Boolean
+}, {
+  timestamps: true,
+  collection: 'commonutilsdbenvs'
 });
 
-module.exports = mongoose.model('commonutilsdbenvs', commonUtilsDbEnvsModel);
+CommonUtilsDbEnvs.plugin(paginate);
+CommonUtilsDbEnvs.plugin(aggregatePaginate);
+
+module.exports = CommonUtilsDbEnvs;

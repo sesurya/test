@@ -1,9 +1,11 @@
 'use strict';
 
 const mongoose = require('mongoose');
+const paginate = require('mongoose-paginate');
+const aggregatePaginate = require('mongoose-aggregate-paginate');
 const Schema = mongoose.Schema;
 
-const eligibilityCalculatorModel = new Schema({
+const EligibilityCalculator = new Schema({
   examId: Object,
   category: String,
   minAge: Number,
@@ -15,6 +17,10 @@ const eligibilityCalculatorModel = new Schema({
     createdAt: 'created_at',
     updatedAt: 'updated_at',
   },
+  collection: 'eligibilityCalculators'
 });
 
-module.exports = mongoose.model('eligibilityCalculators', eligibilityCalculatorModel);
+EligibilityCalculator.plugin(paginate);
+EligibilityCalculator.plugin(aggregatePaginate);
+
+module.exports = EligibilityCalculator;

@@ -1,9 +1,11 @@
 'use strict';
 
 const mongoose = require('mongoose');
+const paginate = require('mongoose-paginate');
+const aggregatePaginate = require('mongoose-aggregate-paginate');
 const Schema = mongoose.Schema;
 
-const lsDataapipayloadModel = new Schema({
+const LsDataApiPayload = new Schema({
   payload: Array,
   lsAccount: Number,
   lsqStats: Boolean,
@@ -13,4 +15,7 @@ const lsDataapipayloadModel = new Schema({
   updatedAt: Date,
 }});
 
-module.exports = mongoose.model('lsDataapipayload', lsDataapipayloadModel);
+LsDataApiPayload.plugin(paginate);
+LsDataApiPayload.plugin(aggregatePaginate);
+
+module.exports = LsDataApiPayload;//.model('lsDataapipayload', lsDataapipayloadModel);

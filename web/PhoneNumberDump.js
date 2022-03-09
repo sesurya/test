@@ -1,6 +1,9 @@
 const mongoose = require('mongoose');
+const paginate = require('mongoose-paginate');
+const aggregatePaginate = require('mongoose-aggregate-paginate');
+const Schema = mongoose.Schema;
 
-const phoneNumberDumpSchema = new mongoose.Schema({
+const PhoneNumberDump = new Schema({
   phoneNumber: {
     type: String,
     required: true,
@@ -18,4 +21,7 @@ const phoneNumberDumpSchema = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model('smsUserPhoneNumbers', phoneNumberDumpSchema);
+PhoneNumberDump.plugin(paginate);
+PhoneNumberDump.plugin(aggregatePaginate);
+
+module.exports = ApiMessage;//.model('smsUserPhoneNumbers', phoneNumberDumpSchema);

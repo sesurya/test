@@ -1,9 +1,11 @@
 'use strict';
 
 const mongoose = require('mongoose');
+const paginate = require('mongoose-paginate');
+const aggregatePaginate = require('mongoose-aggregate-paginate');
 const Schema = mongoose.Schema;
 
-const toppersScholarshipModel = new Schema({
+const ToppersScholarship = new Schema({
   name: String,
   mobile: String,
   email: String,
@@ -17,4 +19,7 @@ const toppersScholarshipModel = new Schema({
   pageType: String
 });
 
-module.exports = mongoose.model('toppersScholarship', toppersScholarshipModel);
+ToppersScholarship.plugin(paginate);
+ToppersScholarship.plugin(aggregatePaginate);
+
+module.exports = ToppersScholarship;//.model('toppersScholarship', toppersScholarshipModel);

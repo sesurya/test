@@ -1,9 +1,11 @@
 'use strict';
 
 const mongoose = require('mongoose');
+const paginate = require('mongoose-paginate');
+const aggregatePaginate = require('mongoose-aggregate-paginate');
 const Schema = mongoose.Schema;
 
-const quizModel = new Schema({
+const Quiz = new Schema({
   name: String,
   question: {
     questionPartOne: String,
@@ -52,4 +54,7 @@ const quizModel = new Schema({
   createdAt: Date,
 });
 
-module.exports = mongoose.model('quiz', quizModel);
+Quiz.plugin(paginate);
+Quiz.plugin(aggregatePaginate);
+
+module.exports = Quiz;//.model('quiz', quizModel);

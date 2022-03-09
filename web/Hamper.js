@@ -1,9 +1,11 @@
 'use strict';
 
 const mongoose = require('mongoose');
+const paginate = require('mongoose-paginate');
+const aggregatePaginate = require('mongoose-aggregate-paginate');
 const Schema = mongoose.Schema;
 
-const hamperModel = new Schema({
+const Hamper = new Schema({
   name: String,
   mobile: String,
   alternateMobile: String,
@@ -26,4 +28,7 @@ const hamperModel = new Schema({
   createdAt: Date
 });
 
-module.exports = mongoose.model('hamper', hamperModel);
+Hamper.plugin(paginate);
+Hamper.plugin(aggregatePaginate);
+
+module.exports = Hamper;//.model('hamper', hamperModel);

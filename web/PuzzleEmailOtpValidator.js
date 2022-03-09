@@ -1,9 +1,11 @@
 'use strict';
 
 const mongoose = require('mongoose');
+const paginate = require('mongoose-paginate');
+const aggregatePaginate = require('mongoose-aggregate-paginate');
 const Schema = mongoose.Schema;
 
-const puzzleEmailOtpValidatorModel = new Schema({
+const PuzzleEmailOtpValidator = new Schema({
   email: String,
   requestCounter: Number,
   requestedAt: Date,
@@ -16,4 +18,7 @@ const puzzleEmailOtpValidatorModel = new Schema({
   updatedAt: Date,
 });
 
-module.exports = mongoose.model('puzzlEmailOtpValidators', puzzleEmailOtpValidatorModel);
+PuzzleEmailOtpValidator.plugin(paginate);
+PuzzleEmailOtpValidator.plugin(aggregatePaginate);
+
+module.exports = PuzzleEmailOtpValidator;//.model('puzzlEmailOtpValidators', puzzleEmailOtpValidatorModel);

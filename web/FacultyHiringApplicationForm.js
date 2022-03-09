@@ -1,9 +1,11 @@
 'use strict';
 
 const mongoose = require('mongoose');
+const paginate = require('mongoose-paginate');
+const aggregatePaginate = require('mongoose-aggregate-paginate');
 const Schema = mongoose.Schema;
 
-const facultyHiringApplicationFormModel = new Schema({
+const FacultyHiringApplicationForm = new Schema({
   name: String,
   mobile: String,
   email: String,
@@ -62,6 +64,12 @@ const facultyHiringApplicationFormModel = new Schema({
   urlReferrer: String, // referrer url
   createdAt: Date,
   updatedAt: Date,
+}, {
+  timestamps: true,
+  collection: 'facultyhiringapplicationform'
 });
 
-module.exports = mongoose.model('facultyhiringapplicationform', facultyHiringApplicationFormModel);
+FacultyHiringApplicationForm.plugin(paginate);
+FacultyHiringApplicationForm.plugin(aggregatePaginate);
+
+module.exports = FacultyHiringApplicationForm;

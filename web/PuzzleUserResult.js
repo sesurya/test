@@ -2,9 +2,11 @@
 
 const { number, string, array } = require('@hapi/joi');
 const mongoose = require('mongoose');
+const paginate = require('mongoose-paginate');
+const aggregatePaginate = require('mongoose-aggregate-paginate');
 const Schema = mongoose.Schema;
 
-const puzzleSubmissionModel  = new Schema({
+const PuzzleUserResult  = new Schema({
   name: String,
   email:String,
   created_at:String,
@@ -16,5 +18,8 @@ const puzzleSubmissionModel  = new Schema({
 });
 
 
-module.exports = mongoose.model('puzzleUserResults', puzzleSubmissionModel);
+PuzzleUserResult.plugin(paginate);
+PuzzleUserResult.plugin(aggregatePaginate);
+
+module.exports = PuzzleUserResult;//.model('puzzleUserResults', puzzleSubmissionModel);
 

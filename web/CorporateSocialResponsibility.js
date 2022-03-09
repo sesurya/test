@@ -1,9 +1,11 @@
 'use strict';
 
 const mongoose = require('mongoose');
+const paginate = require('mongoose-paginate');
+const aggregatePaginate = require('mongoose-aggregate-paginate');
 const Schema = mongoose.Schema;
 
-const corporateSocialResponsibilityModel = new Schema({
+const CorporateSocialResponsibility = new Schema({
   name: String,
   mobile: Number,
   selector: String,
@@ -18,6 +20,12 @@ const corporateSocialResponsibilityModel = new Schema({
   urlReferrer: String,
 
   createdAt: Date,
+}, {
+  timestamps: true,
+  collection: 'corporateSocialResponsibility'
 });
 
-module.exports = mongoose.model('corporateSocialResponsibility', corporateSocialResponsibilityModel);
+CorporateSocialResponsibility.plugin(paginate);
+CorporateSocialResponsibility.plugin(aggregatePaginate);
+
+module.exports = CorporateSocialResponsibility;

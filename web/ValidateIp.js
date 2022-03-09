@@ -1,9 +1,11 @@
 'use strict';
 
 const mongoose = require('mongoose');
+const paginate = require('mongoose-paginate');
+const aggregatePaginate = require('mongoose-aggregate-paginate');
 const Schema = mongoose.Schema;
 
-const ValidateIpModels = new Schema({
+const ValidateIp = new Schema({
   hitCount: Number,
   isBlocked: Boolean,
   createdTime: Date,
@@ -11,4 +13,7 @@ const ValidateIpModels = new Schema({
   ipAddress: String,
 });
 
-module.exports = mongoose.model('ipcollections', ValidateIpModels);
+ValidateIp.plugin(paginate);
+ValidateIp.plugin(aggregatePaginate);
+
+module.exports = ValidateIp;//.model('ipcollections', ValidateIpModels);

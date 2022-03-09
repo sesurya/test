@@ -1,9 +1,11 @@
 'use strict';
 
 const mongoose = require('mongoose');
+const paginate = require('mongoose-paginate');
+const aggregatePaginate = require('mongoose-aggregate-paginate');
 const Schema = mongoose.Schema;
 
-const smsProviderDetail = new Schema({
+const SmsProviderDetail = new Schema({
     providerName: String,
     sourceNumber : String,
     apiKey:  String,
@@ -18,4 +20,7 @@ const smsProviderDetail = new Schema({
     Value_first_user: String,
 });
 
-module.exports = mongoose.model('smsproviderdetail', smsProviderDetail);
+SmsProviderDetail.plugin(paginate);
+SmsProviderDetail.plugin(aggregatePaginate);
+
+module.exports = SmsProviderDetail;//.model('smsproviderdetail', smsProviderDetail);

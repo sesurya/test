@@ -1,14 +1,22 @@
 'use strict';
 
 const mongoose = require('mongoose');
+const paginate = require('mongoose-paginate');
+const aggregatePaginate = require('mongoose-aggregate-paginate');
 const Schema = mongoose.Schema;
 
-const facultHiringTimeSlotModel = new Schema({
+const FacultyHiringTimeSlot = new Schema({
   location: String,
   timeSlot: String,
   from: Date,
   to: Date,
   isActive: Boolean,
+}, {
+  timestamps: true,
+  collection: 'facultyhiringtimeslot'
 });
 
-module.exports = mongoose.model('facultyhiringtimeslot', facultHiringTimeSlotModel);
+FacultyHiringTimeSlot.plugin(paginate);
+FacultyHiringTimeSlot.plugin(aggregatePaginate);
+
+module.exports = FacultyHiringTimeSlot;

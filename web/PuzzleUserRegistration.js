@@ -1,11 +1,12 @@
 'use strict';
 
+const { string } = require('@hapi/joi');
 const mongoose = require('mongoose');
 const paginate = require('mongoose-paginate');
 const aggregatePaginate = require('mongoose-aggregate-paginate');
 const Schema = mongoose.Schema;
 
-const WomensDayPuzzleUser = new Schema({
+const puzzleUserRegistration = new Schema({
   name: String,
   department: String,
   email: String,
@@ -13,7 +14,7 @@ const WomensDayPuzzleUser = new Schema({
   createdAt: String
 });
 
-WomensDayPuzzleUser.plugin(paginate);
-WomensDayPuzzleUser.plugin(aggregatePaginate);
+puzzleUserRegistration.plugin(paginate);
+puzzleUserRegistration.plugin(aggregatePaginate);
 
-module.exports = WomensDayPuzzleUser;//.model('womensdaypuzzleusers', womensDayPuzzleUsersModel);
+module.exports = puzzleUserRegistration;//.model('puzzleusers', puzzleUsersRegisterModel);

@@ -1,9 +1,11 @@
 'use strict';
 
 const mongoose = require('mongoose');
+const paginate = require('mongoose-paginate');
+const aggregatePaginate = require('mongoose-aggregate-paginate');
 const Schema = mongoose.Schema;
 
-const complaintsResolutionMailModel = new Schema({
+const ComplaintsResolutionMail = new Schema({
   nameOfTheStudent: String,
   email: String,
   toMailId: String,
@@ -15,6 +17,12 @@ const complaintsResolutionMailModel = new Schema({
   attachedFilesType: Array,
   attachedFiles: Array,
   mailDeliveryStatus: Boolean,
+}, {
+  timestamps: true,
+  collection: 'complaintsresolutionmail'
 });
 
-module.exports = mongoose.model('complaintsresolutionmail', complaintsResolutionMailModel);
+ComplaintsResolutionMail.plugin(paginate);
+ComplaintsResolutionMail.plugin(aggregatePaginate);
+
+module.exports = ComplaintsResolutionMail;

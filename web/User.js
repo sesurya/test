@@ -1,9 +1,11 @@
 'use strict';
 
 const mongoose = require('mongoose');
+const paginate = require('mongoose-paginate');
+const aggregatePaginate = require('mongoose-aggregate-paginate');
 const Schema = mongoose.Schema;
 
-const usersModel = new Schema({
+const User = new Schema({
   userLogin: String,
   userPassword: String,
   userEmail: String,
@@ -13,4 +15,7 @@ const usersModel = new Schema({
   appName: String,
 });
 
-module.exports = mongoose.model('users', usersModel);
+User.plugin(paginate);
+User.plugin(aggregatePaginate);
+
+module.exports = User;//.model('users', usersModel);

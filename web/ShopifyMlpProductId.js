@@ -1,10 +1,15 @@
 'use strict';
 
 const mongoose = require('mongoose');
+const paginate = require('mongoose-paginate');
+const aggregatePaginate = require('mongoose-aggregate-paginate');
 const Schema = mongoose.Schema;
 
-const shopifyMlpProductId = new Schema({
+const ShopifyMlpProductId = new Schema({
     mlpProductIds: Array
 });
 
-module.exports = mongoose.model('shopifyMlpProductId', shopifyMlpProductId);
+ShopifyMlpProductId.plugin(paginate);
+ShopifyMlpProductId.plugin(aggregatePaginate);
+
+module.exports = ShopifyMlpProductId;//.model('shopifyMlpProductId', shopifyMlpProductId);

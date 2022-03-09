@@ -1,13 +1,21 @@
 'use strict';
 
 const mongoose = require('mongoose');
+const paginate = require('mongoose-paginate');
+const aggregatePaginate = require('mongoose-aggregate-paginate');
 const Schema = mongoose.Schema;
 
-const diwalihamperpartneremailsModel = new Schema({
+const DiwaliHamperPartnerEmail = new Schema({
   partnerEmailOne: String,
   partnerEmailTwo: String,
   partnerEmailThree: String,
   name: String
+}, {
+  timestamps: true,
+  collection: 'diwalihamperpartneremails'
 });
 
-module.exports = mongoose.model('diwalihamperpartneremails', diwalihamperpartneremailsModel);
+DiwaliHamperPartnerEmail.plugin(paginate);
+DiwaliHamperPartnerEmail.plugin(aggregatePaginate);
+
+module.exports = DiwaliHamperPartnerEmail;

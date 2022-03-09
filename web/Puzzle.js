@@ -1,18 +1,20 @@
 'use strict';
 
-const { number, string } = require('@hapi/joi');
 const mongoose = require('mongoose');
+const paginate = require('mongoose-paginate');
+const aggregatePaginate = require('mongoose-aggregate-paginate');
 const Schema = mongoose.Schema;
 
-const puzzlesModel  = new Schema({
+const Puzzle  = new Schema({
   name: String,
   puzzle_no:Number,
   puzzle_type:String,
   clue:String,
-  answer:String,
-  
+  answer:String,  
 });
 
+Puzzle.plugin(paginate);
+Puzzle.plugin(aggregatePaginate);
 
-module.exports = mongoose.model('puzzles', puzzlesModel);
+module.exports = Puzzle;//.model('puzzles', puzzlesModel);
 

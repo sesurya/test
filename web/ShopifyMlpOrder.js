@@ -1,9 +1,11 @@
 'use strict';
 
 const mongoose = require('mongoose');
+const paginate = require('mongoose-paginate');
+const aggregatePaginate = require('mongoose-aggregate-paginate');
 const Schema = mongoose.Schema;
 
-const shopifyMlpOrder = new Schema({
+const ShopifyMlpOrder = new Schema({
     orderNumber: Number,
     customerFirstName: String,
     customerLastName: String,
@@ -13,4 +15,7 @@ const shopifyMlpOrder = new Schema({
     cart: Object
 });
 
-module.exports = mongoose.model('shopifyMlpOrder', shopifyMlpOrder);
+ShopifyMlpOrder.plugin(paginate);
+ShopifyMlpOrder.plugin(aggregatePaginate);
+
+module.exports = ShopifyMlpOrder;//.model('shopifyMlpOrder', shopifyMlpOrder);
