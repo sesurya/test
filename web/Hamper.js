@@ -26,9 +26,12 @@ const Hamper = new Schema({
   isorderPunched: Boolean,
   draftOrderId: String,
   createdAt: Date
+}, {
+  timestamps: true,
+  collection: 'hamper'
 });
 
 Hamper.plugin(paginate);
 Hamper.plugin(aggregatePaginate);
 
-module.exports = Hamper;//.model('hamper', hamperModel);
+module.exports = Hamper;

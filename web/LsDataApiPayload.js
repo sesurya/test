@@ -11,11 +11,15 @@ const LsDataApiPayload = new Schema({
   lsqStats: Boolean,
   formName: String,
 
-}, {timestamps: {createdAt: Date,
-  updatedAt: Date,
-}});
+}, {
+  timestamps: {
+    createdAt: Date,
+    updatedAt: Date,
+  },
+  collection: 'lsDataapipayload'
+});
 
 LsDataApiPayload.plugin(paginate);
 LsDataApiPayload.plugin(aggregatePaginate);
 
-module.exports = LsDataApiPayload;//.model('lsDataapipayload', lsDataapipayloadModel);
+module.exports = LsDataApiPayload;

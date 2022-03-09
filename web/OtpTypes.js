@@ -7,9 +7,12 @@ const Schema = mongoose.Schema;
 
 const OtpTypes = new Schema({
   otpType: String,
+}, {
+  timestamps: true,
+  collection: 'otptypes'
 });
 
 OtpTypes.plugin(paginate);
 OtpTypes.plugin(aggregatePaginate);
 
-module.exports = OtpTypes;//.model('otptypes', otpTypes);
+module.exports = OtpTypes;

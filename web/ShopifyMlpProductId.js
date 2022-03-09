@@ -7,9 +7,12 @@ const Schema = mongoose.Schema;
 
 const ShopifyMlpProductId = new Schema({
     mlpProductIds: Array
+}, {
+    timestamps: true,
+    collection: 'shopifyMlpProductId'
 });
 
 ShopifyMlpProductId.plugin(paginate);
 ShopifyMlpProductId.plugin(aggregatePaginate);
 
-module.exports = ShopifyMlpProductId;//.model('shopifyMlpProductId', shopifyMlpProductId);
+module.exports = ShopifyMlpProductId;

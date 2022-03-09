@@ -14,11 +14,14 @@ const WomensDayPuzzlResult  = new Schema({
   puzzle_details:Array,
   puzzleName:String,
   puzzleFinishTime:String
+}, {
+  timestamps: true,
+  collection: 'womensdaypuzzleuserresults'
 });
 
 
 WomensDayPuzzlResult.plugin(paginate);
 WomensDayPuzzlResult.plugin(aggregatePaginate);
 
-module.exports = WomensDayPuzzlResult;//.model('womensdaypuzzleuserresults', womensDayPuzzleSubmissionModel);
+module.exports = WomensDayPuzzlResult;
 

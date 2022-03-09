@@ -13,9 +13,12 @@ const ShopifyMlpOrder = new Schema({
     customerPhone: Number,
     createdAt: String,
     cart: Object
+}, {
+    timestamps: true,
+    collection: 'shopifyMlpOrder'
 });
 
 ShopifyMlpOrder.plugin(paginate);
 ShopifyMlpOrder.plugin(aggregatePaginate);
 
-module.exports = ShopifyMlpOrder;//.model('shopifyMlpOrder', shopifyMlpOrder);
+module.exports = ShopifyMlpOrder;

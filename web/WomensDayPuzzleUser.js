@@ -11,9 +11,12 @@ const WomensDayPuzzleUser = new Schema({
   email: String,
   puzzleName: String,
   createdAt: String
+}, {
+  timestamps: true,
+  collection: 'womensdaypuzzleusers'
 });
 
 WomensDayPuzzleUser.plugin(paginate);
 WomensDayPuzzleUser.plugin(aggregatePaginate);
 
-module.exports = WomensDayPuzzleUser;//.model('womensdaypuzzleusers', womensDayPuzzleUsersModel);
+module.exports = WomensDayPuzzleUser;

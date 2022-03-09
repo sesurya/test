@@ -19,9 +19,12 @@ const PhoneNumberDump = new Schema({
     type: Number,
     required: true,
   },
+}, {
+  timestamps: true,
+  collection: 'smsUserPhoneNumbers'
 });
 
 PhoneNumberDump.plugin(paginate);
 PhoneNumberDump.plugin(aggregatePaginate);
 
-module.exports = ApiMessage;//.model('smsUserPhoneNumbers', phoneNumberDumpSchema);
+module.exports = PhoneNumberDump;

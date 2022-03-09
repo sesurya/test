@@ -7,9 +7,12 @@ const Schema = mongoose.Schema;
 
 const SmsServiceProvider = new Schema({
     providerType: Number
+}, {
+    timestamps: true,
+    collection: 'smsserviceprovider'
 });
 
 SmsServiceProvider.plugin(paginate);
 SmsServiceProvider.plugin(aggregatePaginate);
 
-module.exports = SmsServiceProvider;//.model('smsserviceprovider', smsServiceProvider);
+module.exports = SmsServiceProvider;

@@ -17,9 +17,12 @@ const ToppersScholarship = new Schema({
   createdAt: Date,
   updatedAt: Date,
   pageType: String
+}, {
+  timestamps: true,
+  collection: 'toppersScholarship'
 });
 
 ToppersScholarship.plugin(paginate);
 ToppersScholarship.plugin(aggregatePaginate);
 
-module.exports = ToppersScholarship;//.model('toppersScholarship', toppersScholarshipModel);
+module.exports = ToppersScholarship;
