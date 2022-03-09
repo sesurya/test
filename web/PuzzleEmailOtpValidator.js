@@ -16,9 +16,12 @@ const PuzzleEmailOtpValidator = new Schema({
   isOtpSent: Boolean,
   createdAt: Date,
   updatedAt: Date,
+}, {
+  timestamps: true,
+  collection: 'puzzlEmailOtpValidators'
 });
 
 PuzzleEmailOtpValidator.plugin(paginate);
 PuzzleEmailOtpValidator.plugin(aggregatePaginate);
 
-module.exports = PuzzleEmailOtpValidator;//.model('puzzlEmailOtpValidators', puzzleEmailOtpValidatorModel);
+module.exports = PuzzleEmailOtpValidator;

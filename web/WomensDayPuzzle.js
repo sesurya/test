@@ -11,10 +11,13 @@ const WomensDayPuzzle = new Schema({
   puzzle_type:String,
   clue:String,
   answer:String,
+}, {
+  timestamps: true,
+  collection: 'womensdaypuzzles'
 });
 
 
 WomensDayPuzzle.plugin(paginate);
 WomensDayPuzzle.plugin(aggregatePaginate);
 
-module.exports = WomensDayPuzzle;//.model('womensdaypuzzles', womensDayPuzzleModel);
+module.exports = WomensDayPuzzle;

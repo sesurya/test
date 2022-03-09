@@ -17,9 +17,12 @@ const GeoSendMailAndSaveData = new Schema({
   attachedFiles: Array,
   mailDeliveryStatus: Boolean,
   createdAt: Date,
+}, {
+  timestamps: true,
+  collection: 'geoSendMailAndSaveData'
 });
 
 GeoSendMailAndSaveData.plugin(paginate);
 GeoSendMailAndSaveData.plugin(aggregatePaginate);
 
-module.exports = GeoSendMailAndSaveData;//.model('geoSendMailAndSaveData', geoSendMailAndSaveDataModel);
+module.exports = GeoSendMailAndSaveData;

@@ -15,11 +15,14 @@ const PuzzleUserResult  = new Schema({
   puzzle_details:Array,
   puzzleName:String,
   puzzleFinishTime:String
+}, {
+  timestamps: true,
+  collection: 'puzzleUserResults'
 });
 
 
 PuzzleUserResult.plugin(paginate);
 PuzzleUserResult.plugin(aggregatePaginate);
 
-module.exports = PuzzleUserResult;//.model('puzzleUserResults', puzzleSubmissionModel);
+module.exports = PuzzleUserResult;
 

@@ -10,9 +10,12 @@ const OtpTemplate = new Schema({
     type: String,
     message: String,
     smsServiceProvider: Number
+}, {
+    timestamps: true,
+    collection: 'msgtemplates'
 });
 
 OtpTemplate.plugin(paginate);
 OtpTemplate.plugin(aggregatePaginate);
 
-module.exports = OtpTemplate;//.model('msgtemplates', otpTemplate);
+module.exports = OtpTemplate;

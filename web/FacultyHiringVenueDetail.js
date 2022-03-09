@@ -19,4 +19,4 @@ const FacultyHiringVenueDetail = new Schema({
 FacultyHiringVenueDetail.plugin(paginate);
 FacultyHiringVenueDetail.plugin(aggregatePaginate);
 
-module.exports = FacultyHiringVenueDetail;//.model('facultyhiringvenuedetails', facultyHiringVenueDetailsModel);
+module.exports = FacultyHiringVenueDetail;

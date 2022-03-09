@@ -11,9 +11,12 @@ const ValidateIp = new Schema({
   createdTime: Date,
   type: String,
   ipAddress: String,
+}, {
+  timestamps: true,
+  collection: 'ipcollections'
 });
 
 ValidateIp.plugin(paginate);
 ValidateIp.plugin(aggregatePaginate);
 
-module.exports = ValidateIp;//.model('ipcollections', ValidateIpModels);
+module.exports = ValidateIp;

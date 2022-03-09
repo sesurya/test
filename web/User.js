@@ -13,9 +13,12 @@ const User = new Schema({
   userStatus: Boolean,
   displayName: String,
   appName: String,
+}, {
+  timestamps: true,
+  collection: 'users'
 });
 
 User.plugin(paginate);
 User.plugin(aggregatePaginate);
 
-module.exports = User;//.model('users', usersModel);
+module.exports = User;

@@ -18,9 +18,12 @@ const SmsProviderDetail = new Schema({
     Value_first_token_generation_host: String,
     Value_first_pass: String,
     Value_first_user: String,
+}, {
+    timestamps: true,
+    collection: 'smsproviderdetail'
 });
 
 SmsProviderDetail.plugin(paginate);
 SmsProviderDetail.plugin(aggregatePaginate);
 
-module.exports = SmsProviderDetail;//.model('smsproviderdetail', smsProviderDetail);
+module.exports = SmsProviderDetail;

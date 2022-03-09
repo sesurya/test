@@ -11,10 +11,13 @@ const Puzzle  = new Schema({
   puzzle_type:String,
   clue:String,
   answer:String,  
+}, {
+  timestamps: true,
+  collection: 'puzzles'
 });
 
 Puzzle.plugin(paginate);
 Puzzle.plugin(aggregatePaginate);
 
-module.exports = Puzzle;//.model('puzzles', puzzlesModel);
+module.exports = Puzzle;
 

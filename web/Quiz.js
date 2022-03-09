@@ -52,9 +52,12 @@ const Quiz = new Schema({
   wrongAnswerResponse: String,
   isPrivate: Boolean,
   createdAt: Date,
+}, {
+  timestamps: true,
+  collection: 'quiz'
 });
 
 Quiz.plugin(paginate);
 Quiz.plugin(aggregatePaginate);
 
-module.exports = Quiz;//.model('quiz', quizModel);
+module.exports = Quiz;

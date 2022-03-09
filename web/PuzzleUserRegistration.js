@@ -12,9 +12,12 @@ const puzzleUserRegistration = new Schema({
   email: String,
   puzzleName: String,
   createdAt: String
+}, {
+  timestamps: true,
+  collection: 'puzzleusers'
 });
 
 puzzleUserRegistration.plugin(paginate);
 puzzleUserRegistration.plugin(aggregatePaginate);
 
-module.exports = puzzleUserRegistration;//.model('puzzleusers', puzzleUsersRegisterModel);
+module.exports = puzzleUserRegistration;
