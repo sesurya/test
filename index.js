@@ -8,8 +8,8 @@ const whatsapp = require('./whatsapp');
 const ctp = require('./ctp');
 const web = require('./web');
 const nucleus = require('./nucleus');
-const mockTest = require('./mock-test');
-const upscBnat = require('./upsc-bnat');
+const mockTest = require('./mockTest');
+const upscBnat = require('./upscBnat');
 const gmap = require('./gmap');
 const notification = require('./notification')
 
