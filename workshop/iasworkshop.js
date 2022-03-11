@@ -22,40 +22,25 @@ const firstMidSecValue = new Schema({
     highlight: Array,
 });
 
-const secondMidSecValue = new Schema({
-    titleTop: String,
-    titlebottom: String,
-    highlight: Array,
-});
-
 const urlPathValue = new Schema({
-    imgUrl: String,
+    Url: String,
 });
-
-const WorkshopMaster = new Schema({
-    name: String,
-    formattedName: String,
-    header: String,
-    content: String,
-    teacherName: String,
-    teacherImg: String,
-    language: String,
-    createdBy: String,
-    updatedBy: String,
+const iasworkshop = new Schema({
     firstmidsectionAttributes: firstMidSecValue,
     second: String,
     highlight: Array,
-    secondMidSecAttributes: secondMidSecValue,
     faqSecAttributes: faqSecValue,
     headerAttributes: headerValue,
     urlPathAttributes: urlPathValue,
-    button: Boolean,
-}, {
+    button: Object,
+},{
     collection: 'iasworkshop',
+    timestamps: {
     timestamps: true
+    }
 });
 
-WorkshopMaster.plugin(paginate);
-WorkshopMaster.plugin(aggregatePaginate);
+iasworkshop.plugin(paginate);
+iasworkshop.plugin(aggregatePaginate);
 
-module.exports = WorkshopMaster;
+module.exports = iasworkshop;
