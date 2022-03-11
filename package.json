@@ -1,6 +1,6 @@
 {
     "name": "@byjusweb/nexemplum",
-    "version": "0.0.61",
+    "version": "0.0.62",
     "description": "Central models for all the microservices",
     "main": "index.js",
     "scripts": {
