@@ -13,7 +13,7 @@ const FacultyHiringTimeSlot = new Schema({
   isActive: Boolean,
 }, {
   timestamps: true,
-  collection: 'facultyhiringtimeslot'
+  collection: 'facultyhiringtimeslots'
 });
 
 FacultyHiringTimeSlot.plugin(paginate);

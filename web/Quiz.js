@@ -54,7 +54,7 @@ const Quiz = new Schema({
   createdAt: Date,
 }, {
   timestamps: true,
-  collection: 'quiz'
+  collection: 'quizzes'
 });
 
 Quiz.plugin(paginate);

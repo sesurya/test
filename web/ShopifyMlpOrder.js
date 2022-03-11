@@ -15,7 +15,7 @@ const ShopifyMlpOrder = new Schema({
     cart: Object
 }, {
     timestamps: true,
-    collection: 'shopifyMlpOrder'
+    collection: 'shopifymlporders'
 });
 
 ShopifyMlpOrder.plugin(paginate);

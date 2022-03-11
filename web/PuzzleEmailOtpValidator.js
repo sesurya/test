@@ -18,7 +18,7 @@ const PuzzleEmailOtpValidator = new Schema({
   updatedAt: Date,
 }, {
   timestamps: true,
-  collection: 'puzzlEmailOtpValidators'
+  collection: 'puzzlemailotpvalidators'
 });
 
 PuzzleEmailOtpValidator.plugin(paginate);

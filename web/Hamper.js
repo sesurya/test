@@ -28,7 +28,7 @@ const Hamper = new Schema({
   createdAt: Date
 }, {
   timestamps: true,
-  collection: 'hamper'
+  collection: 'hampers'
 });
 
 Hamper.plugin(paginate);

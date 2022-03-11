@@ -19,7 +19,7 @@ const ToppersScholarship = new Schema({
   pageType: String
 }, {
   timestamps: true,
-  collection: 'toppersScholarship'
+  collection: 'toppersscholarships'
 });
 
 ToppersScholarship.plugin(paginate);

@@ -22,7 +22,7 @@ const FileUpload = new Schema({
   recordsUndeleted: Number,
 }, {
   timestamps: true,
-  collection: 'fileUpload'
+  collection: 'fileuploads'
 });
 
 FileUpload.plugin(paginate);

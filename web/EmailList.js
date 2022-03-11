@@ -11,7 +11,7 @@ const EmailList = new Schema({
   team: String,
 }, {
     timestamps: true,
-    collection: 'emailList'
+    collection: 'emaillists'
 });
 
 EmailList.plugin(paginate);

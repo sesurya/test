@@ -11,7 +11,7 @@ const LoginUrl = new Schema({
     url: String,
 }, {
     timestamps: true,
-    collection: 'loginurl'
+    collection: 'loginurls'
 });
 
 LoginUrl.plugin(paginate);

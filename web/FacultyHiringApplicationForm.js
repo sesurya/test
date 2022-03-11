@@ -66,7 +66,7 @@ const FacultyHiringApplicationForm = new Schema({
   updatedAt: Date,
 }, {
   timestamps: true,
-  collection: 'facultyhiringapplicationform'
+  collection: 'facultyhiringapplicationforms'
 });
 
 FacultyHiringApplicationForm.plugin(paginate);

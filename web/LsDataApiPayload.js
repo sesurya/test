@@ -16,7 +16,7 @@ const LsDataApiPayload = new Schema({
     createdAt: Date,
     updatedAt: Date,
   },
-  collection: 'lsDataapipayload'
+  collection: 'lsdataapipayloads'
 });
 
 LsDataApiPayload.plugin(paginate);

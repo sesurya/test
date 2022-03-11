@@ -12,7 +12,7 @@ const ApiMessage = new Schema({
   messages: Object,
 }, {
   timestamps: true,
-  collection: 'apiMessages'
+  collection: 'apimessages'
 });
 
 ApiMessage.plugin(paginate);
