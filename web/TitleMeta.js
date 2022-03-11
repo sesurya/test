@@ -15,7 +15,7 @@ const TitleMeta = new Schema({
   timestamps: {
     createdAt: 'created_at',
   },
-  collection: 'titlemeta'
+  collection: 'titlemetas'
 });
 
 module.exports = TitleMeta;

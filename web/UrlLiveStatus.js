@@ -12,7 +12,7 @@ const UrlLiveStatus = new Schema({
   notificationStatus: String,
 }, {
     timestamps: true,
-    collection: 'urlLiveStat'
+    collection: 'urllivestats'
 });
 
 UrlLiveStatus.plugin(paginate);

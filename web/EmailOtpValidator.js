@@ -17,7 +17,7 @@ const EmailOtpValidator = new Schema({
   updatedAt: Date,
 }, {
   timestamps: true,
-  collection: 'emailOtpValidators'
+  collection: 'emailotpvalidators'
 });
 
 EmailOtpValidator.plugin(paginate);
