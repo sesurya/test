@@ -1,6 +1,5 @@
 'use strict';
 
-const { string } = require('@hapi/joi');
 const mongoose = require('mongoose');
 const paginate = require('mongoose-paginate');
 const aggregatePaginate = require('mongoose-aggregate-paginate');
