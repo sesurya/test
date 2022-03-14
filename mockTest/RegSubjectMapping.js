@@ -10,6 +10,7 @@ const RegSubjectMapping = new Schema({
     eoId: { type: String, required: true },
     examType: { type: String, required: true },
     subject: { type: String, required: true },
+    scheduledAt: { type: String, required: true },
     status: {
         type: String,
         enum: ["pending", "redirected", 'attempted', "not_attempted"],
