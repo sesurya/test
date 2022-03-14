@@ -11,9 +11,15 @@ const RegSubjectMapping = new Schema({
     examType: { type: String, required: true },
     subject: { type: String, required: true },
     scheduledAt: { type: String, required: true },
+    alertStatus: {
+        type: String,
+        required: true,
+        enum: ["pending", "completed"],
+        default: "pending"
+    },
     status: {
         type: String,
-        enum: ["pending", "redirected", 'attempted', "not_attempted"],
+        enum: ["exam_registered", "redirected", 'attempted', "not_attempted"],
         required: true
     },
     notificationDetails: {
