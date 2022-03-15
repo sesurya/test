@@ -4,44 +4,27 @@ const paginate = require('mongoose-paginate');
 const aggregatePaginate = require('mongoose-aggregate-paginate');
 const Schema = mongoose.Schema;
 
-// const faqSecValue = new Schema({
-//     title: String,
-//     forqueries: String,
-//     tollfree: Number,
-// });
-
-// const headerValue = new Schema({
-//     headerImg: String,
-//     seminarTitle: String,
-//     seminarType: String,
-// });
-
-// const firstMidSecValue = new Schema({
-//     titleTop: String,
-//     titlebottom: String,
-//     highlight: Array,
-// });
-
-// const secondMidSecValue = new Schema({
-//     titleTop: String,
-//     titlebottom: String,
-//     highlight: Array,
-// });
-
-// const urlPathValue = new Schema({
-//     imgUrl: String,
-// });
 
 const WorkshopMaster = new Schema({
-    language : String,
-    seminarTitle : String,
-    seminarType : String,
-    shcardleftdown : String,
-    shcardleftup : String,
-    shcardrightdown : String,
-    shcardrightup : String,
-    teacher : String,
-    teacherdescription : String,
+    language: String,
+    seminarHighlights: {
+        leftcard: {
+            leftone: { icon: String, content: String },
+            lefttwo: { icon: String, content: String },
+            leftthree: { icon: String, content: String }
+        },
+        rightcard: {
+            rightone: { icon: String, content: String },
+            righttwo: { icon: String, content: String },
+            rightthree: { icon: String, content: String }
+        },
+    },
+    seminarTitle: String,
+    seminarType: String,
+    faqSection: { faq1: { faq: String, solution: String }, faq2: { faq: String, solution: String }, faq3: { faq: String, solution: String } },
+    teacher: String,
+    teacherdescription: String,
+    teacherimage: String
 }, {
     collection: 'workshop_master',
     timestamps: true
