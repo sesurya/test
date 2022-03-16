@@ -25,7 +25,7 @@ const EligibilityCalculatorForm = new Schema({
   updatedAt: Date,
 }, {
   timestamps: true,
-  collection: 'eligibilityCalculatorsForm'
+  collection: 'eligibilitycalculatorsforms'
 });
 
 EligibilityCalculatorForm.plugin(paginate);

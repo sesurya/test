@@ -16,7 +16,7 @@ const UrlInstance = new Schema({
     newFooter: Boolean
 }, {
     timestamps: true,
-    collection: 'instance'
+    collection: 'instances'
 });
 
 UrlInstance.plugin(paginate);

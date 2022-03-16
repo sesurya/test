@@ -9,7 +9,7 @@ const ShopifyMlpProductId = new Schema({
     mlpProductIds: Array
 }, {
     timestamps: true,
-    collection: 'shopifyMlpProductId'
+    collection: 'shopifymlpproductids'
 });
 
 ShopifyMlpProductId.plugin(paginate);

@@ -16,7 +16,7 @@ const PuzzleUserResult  = new Schema({
   puzzleFinishTime:String
 }, {
   timestamps: true,
-  collection: 'puzzleUserResults'
+  collection: 'puzzleuserresults'
 });
 
 

@@ -22,7 +22,7 @@ const CorporateSocialResponsibility = new Schema({
   createdAt: Date,
 }, {
   timestamps: true,
-  collection: 'corporateSocialResponsibility'
+  collection: 'corporatesocialresponsibilities'
 });
 
 CorporateSocialResponsibility.plugin(paginate);

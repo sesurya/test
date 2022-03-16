@@ -19,7 +19,7 @@ const GeoSendMailAndSaveData = new Schema({
   createdAt: Date,
 }, {
   timestamps: true,
-  collection: 'geoSendMailAndSaveData'
+  collection: 'geosendmailandsavedatas'
 });
 
 GeoSendMailAndSaveData.plugin(paginate);

@@ -20,7 +20,7 @@ const SmsProviderDetail = new Schema({
     Value_first_user: String,
 }, {
     timestamps: true,
-    collection: 'smsproviderdetail'
+    collection: 'smsproviderdetails'
 });
 
 SmsProviderDetail.plugin(paginate);

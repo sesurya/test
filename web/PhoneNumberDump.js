@@ -21,7 +21,7 @@ const PhoneNumberDump = new Schema({
   },
 }, {
   timestamps: true,
-  collection: 'smsUserPhoneNumbers'
+  collection: 'smsuserphonenumbers'
 });
 
 PhoneNumberDump.plugin(paginate);

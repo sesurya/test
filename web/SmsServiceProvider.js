@@ -9,7 +9,7 @@ const SmsServiceProvider = new Schema({
     providerType: Number
 }, {
     timestamps: true,
-    collection: 'smsserviceprovider'
+    collection: 'smsserviceproviders'
 });
 
 SmsServiceProvider.plugin(paginate);

@@ -12,7 +12,7 @@ const EmailListReport = new Schema({
   mailType: String
 }, {
     timestamps: true,
-    collection: 'emailListReport'
+    collection: 'emaillistreports'
 });
 
 EmailListReport.plugin(paginate);

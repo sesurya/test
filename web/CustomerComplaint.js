@@ -13,7 +13,7 @@ const CustomerComplaint = new Schema({
   mailDeliveryStatus: Boolean,
 }, {
   timestamps: true,
-  collection: 'customerComplaint'
+  collection: 'customercomplaints'
 });
 
 CustomerComplaint.plugin(paginate);
