@@ -55,6 +55,8 @@ const Lead = new Schema({
     mx_Gender: String,
     slugName: String,
     referralUrl: String,
+    utm_campaign: String ,
+    utm_median: String,
 
     mx_Corporate_Name: String,
     mx_Corporate_Campaign_Date: String,
