@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const paginate = require('mongoose-paginate');
 const aggregatePaginate = require('mongoose-aggregate-paginate');
 const Schema = mongoose.Schema;
-const WebsiteLeadTypes = new Schema({
+const website_lead_types = new Schema({
     name:String,
     formattedName: String,
     description:String,
@@ -13,8 +13,8 @@ const WebsiteLeadTypes = new Schema({
     updatedBy:String
 }, {
     timestamps: true,
-    collection: 'WebsiteLeadTypes'
+    collection: 'website_lead_types'
 });
-WebsiteLeadTypes.plugin(paginate);
-WebsiteLeadTypes.plugin(aggregatePaginate);
-module.exports = WebsiteLeadTypes;
+website_lead_types.plugin(paginate);
+website_lead_types.plugin(aggregatePaginate);
+module.exports = website_lead_types;
