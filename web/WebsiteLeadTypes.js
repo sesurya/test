@@ -13,8 +13,9 @@ const WebsiteLeadTypes = new Schema({
     updatedBy:String
 }, {
     timestamps: true,
-    collection: 'website_lead_types'
+    collection: 'WebsiteLeadTypes'
 });
 WebsiteLeadTypes.plugin(paginate);
 WebsiteLeadTypes.plugin(aggregatePaginate);
+
 module.exports = WebsiteLeadTypes;
