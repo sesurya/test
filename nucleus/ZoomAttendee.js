@@ -8,7 +8,9 @@ const ZoomAttendee = mongoose.Schema({
     email: String,
     longUrl: String,
     shortUrl: String,
-    meetingId: String
+    meetingId: String,
+    createdBy: String,
+    updatedBy: String
 }, {
     timestamps: true,
     collection: 'zoom_attendees'
