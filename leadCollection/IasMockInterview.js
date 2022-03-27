@@ -5,16 +5,11 @@ const paginate = require('mongoose-paginate');
 const aggregatePaginate = require('mongoose-aggregate-paginate');
 const Schema = mongoose.Schema;
 
-
-
-
 const IasMockInterview = new Schema({
     name: String,
     email: String,
     rollno: Boolean,    
-    attachedFilesType:[{
-        0: String   
-    }],    
+    attachedFilesType: Array,    
     mobile: String,
     totalFileSize: String,
     url: String,
@@ -26,11 +21,8 @@ const IasMockInterview = new Schema({
     utmMedium: String,
     utmCampaignId: String,
     gclid: String,
-    attachedFiles:[{
-        0: String
-    }],
-    registrationflag: Boolean,
-    
+    attachedFiles:Array,
+    registrationflag: Boolean,    
 },{
     timestamps: true,
     collection: 'iasmockinterviews'
