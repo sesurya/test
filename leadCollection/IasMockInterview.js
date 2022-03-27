@@ -22,7 +22,8 @@ const IasMockInterview = new Schema({
     utmCampaignId: String,
     gclid: String,
     attachedFiles:Array,
-    registrationflag: Boolean,    
+    registrationflag: Boolean,
+    createdAt: Date    
 },{
     timestamps: true,
     collection: 'iasmockinterviews'
