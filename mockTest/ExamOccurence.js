@@ -44,7 +44,8 @@ const ExamOccurence = new Schema({
         resultPublishedBy: { type: String, required: false },
     },
     timetables: { type: Array, required: false, default: [] },
-    source: { type: String, required: true }
+    source: { type: String, required: true },
+    centres: { type: Object, required: false, default: {} }
 }, {
     collection: 'examoccurences',
     timestamps: true
