@@ -38,7 +38,7 @@ const PreboardRegistration = new Schema({
   password: { type: String, required: true },
   hashedPassword: { type: String, required: true },
   testName: { type: String, required: true },
-  center: String,
+  centre: String,
   lsqStats: Boolean,
   active: Boolean,
   leadId: String,
