@@ -3,6 +3,7 @@ const paginate = require('mongoose-paginate')
 
 const ZoomUploadBatch = mongoose.Schema({
     filename: String,
+    formattedName: String,
     fileUrl: String,
     recordsCount: Number,
     status: String,

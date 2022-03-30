@@ -9,6 +9,7 @@ const ZoomAttendee = mongoose.Schema({
     longUrl: String,
     shortUrl: String,
     meetingId: String,
+    uploadfile: String,
     createdBy: String,
     updatedBy: String
 }, {
