@@ -38,6 +38,9 @@ const BlcRecruitmentForm = new Schema({
     isVideoUploaded: Boolean,
     videoLink: String,
     mailDeliveryStatus: String,
+    isResumeExist: Boolean,
+    isResumeUploaded: Boolean,
+    resumeLink: String,
 
     createdAt: Date,
     updatedAt: Date,
