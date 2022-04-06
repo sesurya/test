@@ -11,7 +11,15 @@ const Campaign = new Schema({
     formattedName: { type: String, required: true, unique: true },
     codePrefix: { type: Number, required: true, unique: true },
     amount: { type: Number, required: true },
-    channel: { type: String, required: true }
+    channel: { type: String, required: true },
+    gstnumber: { type: String, required: true },
+    address: {
+        country: { type: String },
+        state: { type: String  },
+        city: { type: String },
+        zipCode: { type: String },
+        addressLine1: { type: String }
+    }, 
 }, {
     collection: 'campaigns',
     timestamps: {
