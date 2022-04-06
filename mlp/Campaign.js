@@ -19,7 +19,7 @@ const Campaign = new Schema({
         city: { type: String },
         zipCode: { type: String },
         addressLine1: { type: String }
-    }, 
+        }, 
 }, {
     collection: 'campaigns',
     timestamps: {

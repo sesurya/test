@@ -14,9 +14,11 @@ const PrimaryMenu = new Schema({
     parent: Schema.Types.ObjectId,
     menuExpFlag: Number,
     submenuArr: Array,
+    parentName: String,
     isActive: Boolean,
-    onclick: String,
+    user: String,
     relFollow: String,
+    onClick: String,
     additionalClass: String
 }, {
     timestamps: true,

@@ -12,7 +12,9 @@ const Breadcrumb = new Schema({
     isParent: Boolean,
     parent: Schema.Types.ObjectId,
     instance: String,
+    parentName: String,
     isActive: Boolean,
+    user: String,
 }, {
     timestamps: true,
     collection: 'breadcrumbs'
