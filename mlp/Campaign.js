@@ -18,8 +18,8 @@ const Campaign = new Schema({
         state: { type: String  },
         city: { type: String },
         zipCode: { type: String },
-        addressline1: { type: String }
-    }, 
+        addressLine1: { type: String }
+        }, 
 }, {
     collection: 'campaigns',
     timestamps: {
