@@ -12,7 +12,7 @@ const Campaign = new Schema({
     codePrefix: { type: Number, required: true, unique: true },
     amount: { type: Number, required: true },
     channel: { type: String, required: true },
-    gstnumber: { type: String, required: true },
+    gstNumber: { type: String, required: true },
     address: {
         country: { type: String },
         state: { type: String  },
