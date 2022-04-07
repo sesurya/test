@@ -22,7 +22,7 @@ const Campaign = new Schema({
     },
         }, 
 
-}, {
+ {
     collection: 'campaigns',
     timestamps: {
         startDate: 'start_date',
