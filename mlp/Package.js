@@ -40,6 +40,7 @@ const Package = new Schema({
   paymentLinkSentAt: {type: Date, required: false},
   registeredAt: {type: Date, required: false},
   detailsSavedAt: {type: Date, required: false},
+  orderCreationStatus: { type: String, required: false },
   
   createdBy: String,
   updatedBy: String
