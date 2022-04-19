@@ -9,7 +9,7 @@ const PreboardRegistration = new Schema({
   userId: String, // uuid
   phoneNumber: { type: Number, required: true },
   name: { type: String, required: true },
-  emailId: { type: String, required: true },
+  emailId: String,
   status: {
     type: String,
     enum: ["exam_registered", "exam_attended", 'result_not_published', "result_published"],
@@ -47,6 +47,8 @@ const PreboardRegistration = new Schema({
   premiumId: String,
   profileId: String,
   salesForceId: String,
+  centreCity: String,
+  rollNo: Number,
 }, {
   collection: 'preboardregistrations',
   timestamps: {
