@@ -29,7 +29,7 @@ const PreboardRegistration = new Schema({
   grade: { type: Number, required: true },
   board: { type: String, required: true },
   stream: String, // CBSE, ICSE, ISC
-  state: { type: String, required: true },
+  state: String,
   city: { type: String, required: true },
   examId: { type: String, required: true },
   eoId: { type: String, required: true },
