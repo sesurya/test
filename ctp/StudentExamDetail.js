@@ -6,8 +6,8 @@ const paginate = require('mongoose-paginate');
 const mongooseAggregatePaginate = require('mongoose-aggregate-paginate');
 
 const StudentExamDetail = new Schema({
-  phoneNumber: {type: Number, required: true},
-  examName: {type: String, required: true}, // bnat, bnat-k10, bnat-premium
+  phoneNumber: { type: Number, required: true },
+  examName: { type: String, required: true }, // bnat, bnat-k10, bnat-premium, bst
   interestedIn: String, // JEE, NEET, JEE+NEET
   active: Boolean,
   grade: Number,
@@ -16,13 +16,13 @@ const StudentExamDetail = new Schema({
   utmCampaign: String,
   utmSource: String,
   utmContent: String,
-  examStartDateTime: {type: Number, required: true},
-  resultsAnnouncedDateTime: {type: Number, required: true},
+  examStartDateTime: { type: Number, required: true },
+  resultsAnnouncedDateTime: { type: Number, required: true },
   leadSquaredActivityId: String,
   lsqStats: Boolean,
-  examAttempted: {type: Boolean},
+  examAttempted: { type: Boolean },
 }, {
-  collection : "studentexamdetails",
+  collection: "studentexamdetails",
   timestamps: {
     createdAt: 'registrationDate',
     updatedAt: 'modifiedDate',
