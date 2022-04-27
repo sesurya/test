@@ -5,7 +5,11 @@ const Schema = mongoose.Schema;
 const stateValue = new Schema({
     adminArea: {type: String, required: true},
   });
- 
+
+//todo need confirmation if this is a required field
+const consentValues = new Schema({
+    whatsappOptin: {type: Boolean, required: true},
+});
 
 const commonftcUsersAttributeObject = new Schema({
     verifiedMobile: {type: String, required: true},
@@ -13,7 +17,7 @@ const commonftcUsersAttributeObject = new Schema({
     grade: {type: String, required: true},
     name: {type: String, required: true},
     userLocationAttributes: stateValue,
-    
+    userConsentAttributes: consentValues,
     whatsapp: Boolean,
     url: String,
     referrerUrl: String,
