@@ -41,6 +41,9 @@ const Lead = new Schema({
     SourceContent: String,
     UtmSource: String,
     CampaignId: String,
+    tllmsUserAttributes: Array,
+    tllmsUserType: String,
+    redirectionSource: String,
 
     isCustomActivity: Boolean,
     ActivityEvent: Number,
