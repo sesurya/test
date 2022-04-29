@@ -6,9 +6,8 @@ const stateValue = new Schema({
     adminArea: {type: String, required: true},
   });
 
-//todo need confirmation if this is a required field
 const consentValues = new Schema({
-    whatsappOptin: {type: Boolean, required: true},
+    whatsappOptin: Boolean,
 });
 
 const commonftcUsersAttributeObject = new Schema({
