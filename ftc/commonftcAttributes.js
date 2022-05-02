@@ -5,7 +5,10 @@ const Schema = mongoose.Schema;
 const stateValue = new Schema({
     adminArea: {type: String, required: true},
   });
- 
+
+const consentValues = new Schema({
+    whatsappOptin: Boolean,
+});
 
 const commonftcUsersAttributeObject = new Schema({
     verifiedMobile: {type: String, required: true},
@@ -13,7 +16,7 @@ const commonftcUsersAttributeObject = new Schema({
     grade: {type: String, required: true},
     name: {type: String, required: true},
     userLocationAttributes: stateValue,
-    
+    userConsentAttributes: consentValues,
     whatsapp: Boolean,
     url: String,
     referrerUrl: String,
