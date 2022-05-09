@@ -41,7 +41,9 @@ const Package = new Schema({
   registeredAt: {type: Date, required: false},
   detailsSavedAt: {type: Date, required: false},
   orderCreationStatus: { type: String, required: false },
-  
+  school: { type: String, required: false },
+  programWeek: { type: String, required: false },
+  preferredCenter: { type: String, required: false },
   createdBy: String,
   updatedBy: String
 }, {
