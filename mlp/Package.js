@@ -44,6 +44,9 @@ const Package = new Schema({
   school: { type: String, required: false },
   programWeek: { type: String, required: false },
   preferredCenter: { type: String, required: false },
+  customFields: {
+    batchCode: String
+  },
   createdBy: String,
   updatedBy: String
 }, {
