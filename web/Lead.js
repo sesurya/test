@@ -16,6 +16,7 @@ const Lead = new Schema({
     pincode: String,
     EmailAddress: String,
     Website: String,
+    WebsiteLeadType:String, 
     mx_Course_Name: String,
     mx_Source_of_Lead: String,
     mx_UTM_Term: String,
