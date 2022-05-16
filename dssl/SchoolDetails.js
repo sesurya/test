@@ -5,7 +5,7 @@ const paginate = require('mongoose-paginate');
 const aggregatePaginate = require('mongoose-aggregate-paginate');
 const Schema = mongoose.Schema;
 
-const SchoolDetail = new Schema({
+const SchoolDetails = new Schema({
 	name: String,
 	uniqueId: String,
 	address: String,
@@ -34,7 +34,7 @@ const SchoolDetail = new Schema({
   }
 });
 
-SchoolDetail.plugin(paginate);
-SchoolDetail.plugin(aggregatePaginate);
+SchoolDetails.plugin(paginate);
+SchoolDetails.plugin(aggregatePaginate);
 
-module.exports = SchoolDetail;
+module.exports = SchoolDetails;
