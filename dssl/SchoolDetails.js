@@ -5,7 +5,7 @@ const paginate = require('mongoose-paginate');
 const aggregatePaginate = require('mongoose-aggregate-paginate');
 const Schema = mongoose.Schema;
 
-const SchoolDetailModel = new Schema({
+const SchoolDetail = new Schema({
 	name: String,
 	uniqueId: String,
 	address: String,
@@ -26,9 +26,15 @@ const SchoolDetailModel = new Schema({
 		date1: String,
 		date2: String
 	}
+},{
+  collection: 'school-details',
+  timestamps: {
+    createdAt: 'created_at',
+    updatedAt: 'updated_at',
+  }
 });
 
-SchoolDetailModel.plugin(paginate);
-SchoolDetailModel.plugin(aggregatePaginate);
+SchoolDetail.plugin(paginate);
+SchoolDetail.plugin(aggregatePaginate);
 
-module.exports = SchoolDetailModel;
+module.exports = SchoolDetail;
