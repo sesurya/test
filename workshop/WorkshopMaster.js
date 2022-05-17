@@ -8,6 +8,7 @@ const Schema = mongoose.Schema;
 const WorkshopMaster = new Schema({
     name: String,
     formattedName: String,
+    status: String,
     pageConfig: {
         language: String,
         seminarHighlights: {
@@ -16,6 +17,8 @@ const WorkshopMaster = new Schema({
         },
         seminarTitle: String,
         seminarDescription: String,
+        seminarDate: String,
+        seminarDuration: String,
         faqSection: { type: Array, "default": [] },
         teacher: String,
         teacherdescription: String,
