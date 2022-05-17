@@ -14,7 +14,9 @@ const SecondaryMenu = new Schema({
     instance: String,
     parent: Schema.Types.ObjectId,
     submenuArr: Array,
+    parentName: String,
     isActive: Boolean,
+    user: String,
     relFollow: String
 }, {
     timestamps: true,

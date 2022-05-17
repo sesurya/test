@@ -1,0 +1,48 @@
+name: npm-publish-nexemplum
+
+on: 
+  push:
+    branches:
+      - development
+      
+env:
+  version: 0
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - uses: AutoModality/action-clean@v1
+      - uses: actions/checkout@v2
+        with:
+          ref: 'development'
+          fetch-depth: 0
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ap-south-1
+          
+      - name: get values from parameter store
+        run: |
+            aws ssm get-parameters --names /dev/NPMRC --with-decryption --output text --query "Parameters[*].Value" > ./.npmrc
+            cat ./.npmrc
+          
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 12
+          registry-url: https://npm.pkg.github.com/
+          scope: "@byjusweb"
+      - run: echo "version=$(npm show @byjusweb/nexemplum version)" >> $GITHUB_ENV
+      - run: npm version ${{env.version}} --no-git-tag-version --allow-same-version
+      - run: npm install 
+  #   - run: rm -rf .nyc_output coverage lib
+      - run: npm build
+      - run: npm version patch -m "[RELEASE] %s" --no-git-tag-version --allow-same-version
+      - run: npm publish
+        env: 
+          credentials: ${{secrets.GITHUB_TOKEN}}
