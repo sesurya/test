@@ -15,7 +15,7 @@ const ActivationCode = new Schema({
   batchId: { type: String, required: false },
 }, {
   timestamps: true,
-  collection: activation_code
+  collection: "activation_code"
 });
 
 ActivationCode.plugin(paginate);
