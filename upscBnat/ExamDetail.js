@@ -21,6 +21,7 @@ const ExamDetail = new Schema({
   page: String, // bnst-ias, bnst-ias-hindi
   examMode: String, // biWeekly
   previousExamId: String,
+  isLastExam: Boolean,
 }, {
   collection: 'examdetails',
   timestamps: {
