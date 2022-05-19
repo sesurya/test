@@ -5,6 +5,15 @@ const paginate = require('mongoose-paginate');
 const aggregatePaginate = require('mongoose-aggregate-paginate');
 const Schema = mongoose.Schema;
 
+
+const ExamSchema = new Schema({
+  '_id': false,
+  'examStartDateTime': { type: Number, required: true },
+  'examStopDateTime': { type: Number, required: true },
+  'resultsAnnouncedDateTime': { type: Number, required: true },
+  'examAttempted': { type: Boolean }
+});
+
 const UpscRegistration = new Schema({
   firstName: { type: String, required: true },
   lastName: { type: String, required: true },
@@ -27,7 +36,7 @@ const UpscRegistration = new Schema({
   medium: { type: String, required: true },
   assessmentId: String, // Added after Compete to Assess migration
   userId: String, // uuid
-  examStartDateTime: { type: Date, required: true },
+  examData: { type: ExamSchema, required: true },
   leadId: String,
   activityId: String,
   hashedPassword: { type: String, required: true },
