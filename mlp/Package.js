@@ -43,6 +43,7 @@ const Package = new Schema({
   orderCreationStatus: { type: String, required: false },
   school: { type: String, required: false },
   programWeek: { type: String, required: false },
+  premiumId: { type: String, required: false },
   preferredCenter: { type: String, required: false },
   customFields: {
     batchCode: String
