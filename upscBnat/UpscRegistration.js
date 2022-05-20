@@ -36,6 +36,7 @@ const UpscRegistration = new Schema({
   medium: { type: String, required: true },
   assessmentId: String, // Added after Compete to Assess migration
   userId: String, // uuid
+  examStartDateTime: { type: Number, required: true },
   examData: { type: ExamSchema, required: true },
   leadId: String,
   activityId: String,
