@@ -11,7 +11,7 @@ const Channel = new Schema({
     updatedAt:Date,
     createdBy:String,
     updatedBy:String,
-    codePrefix: { type: Number, required: true, unique: true },
+    codePrefix:String,
 }, {
     timestamps: true,
     collection: 'channels'
