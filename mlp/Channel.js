@@ -10,7 +10,8 @@ const Channel = new Schema({
     createdAt:Date,
     updatedAt:Date,
     createdBy:String,
-    updatedBy:String
+    updatedBy:String,
+    codePrefix:String,
 }, {
     timestamps: true,
     collection: 'channels'
