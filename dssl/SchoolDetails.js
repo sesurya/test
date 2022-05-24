@@ -25,6 +25,11 @@ const SchoolDetails = new Schema({
 	testDate: {
 		date1: String,
 		date2: String
+	},
+	userDetails: {
+		name: String,
+		email: String,
+		phoneNumber: String
 	}
 },{
   collection: 'school-details',
