@@ -17,12 +17,14 @@ const WorkshopMaster = new Schema({
         },
         seminarTitle: String,
         seminarDescription: String,
+        seminarTime: String,
         seminarDate: String,
         seminarDuration: String,
         faqSection: { type: Array, "default": [] },
         teacher: String,
         teacherdescription: String,
-        teacherimage: String
+        teacherimage: String,
+        loginUrl: String
     }
 
 
