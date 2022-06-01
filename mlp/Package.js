@@ -48,6 +48,7 @@ const Package = new Schema({
   customFields: {
     batchCode: String
   },
+  schoolDetails: {type: Object},
   createdBy: String,
   updatedBy: String
 }, {
