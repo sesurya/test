@@ -17,6 +17,9 @@ const ComplaintsResolutionMail = new Schema({
   attachedFilesType: Array,
   attachedFiles: Array,
   mailDeliveryStatus: Boolean,
+  
+  created_at: String,
+
 }, {
   timestamps: true,
   collection: 'complaintsresolutionmail'
