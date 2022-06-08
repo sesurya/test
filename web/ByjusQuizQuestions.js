@@ -5,7 +5,7 @@ const paginate = require('mongoose-paginate');
 const aggregatePaginate = require('mongoose-aggregate-paginate');
 const Schema = mongoose.Schema;
 
-const ByjusQuiz = new Schema({
+const ByjusQuizQuestions = new Schema({
     slug_name: String,
     question_part_1: String,
     answer_opt_1: String,
@@ -22,10 +22,10 @@ const ByjusQuiz = new Schema({
 
 }, {
     timestamps: true,
-    collection: 'byjusquiz'
+    collection: 'byjusquizquestions'
 });
 
-ByjusQuiz.plugin(paginate);
-ByjusQuiz.plugin(aggregatePaginate);
+ByjusQuizQuestions.plugin(paginate);
+ByjusQuizQuestions.plugin(aggregatePaginate);
 
-module.exports = ByjusQuiz;
+module.exports = ByjusQuizQuestions;
