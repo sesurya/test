@@ -7,9 +7,13 @@ const Schema = mongoose.Schema;
 
 const SchoolDetails = new Schema({
 	name: String,
-	uniqueId: String,
+	schoolId: String,
+	universalId: String,
 	address: String,
-	city: String,
+	city: {
+		cityId: String,
+		cityName: String
+	},
 	state: String,
 	pincode: String,
 	classInfo: {
@@ -31,12 +35,12 @@ const SchoolDetails = new Schema({
 		email: String,
 		phoneNumber: String
 	}
-},{
-  collection: 'school-details',
-  timestamps: {
-    createdAt: 'created_at',
-    updatedAt: 'updated_at',
-  }
+}, {
+	collection: 'school-details',
+	timestamps: {
+		createdAt: 'created_at',
+		updatedAt: 'updated_at',
+	}
 });
 
 SchoolDetails.plugin(paginate);
