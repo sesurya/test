@@ -7,9 +7,8 @@ const Schema = mongoose.Schema;
 
 const LikesAndDislikes = new Schema({
     url: String,
-    session_id: String,
-    likeCount: Number,
-    dislikeCount: Number,
+    likeCount: Array,
+    dislikeCount: Array,
 
     created_at: String,
     updated_at: String,
