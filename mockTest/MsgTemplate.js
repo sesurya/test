@@ -17,6 +17,7 @@ const MsgTemplate = new Schema({
   landingPage: String,
   page: String,
   smsServiceProvider: { type: Number, requried: true }, // 1 Gupshup, 2 Kaleyra, 3 both
+  eoId: String,
 }, {
   collection: 'msgtemplates',
   timestamps: true

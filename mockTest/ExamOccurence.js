@@ -45,7 +45,8 @@ const ExamOccurence = new Schema({
     },
     timetables: { type: Array, required: false, default: [] },
     source: { type: String, required: true },
-    centres: { type: Object, required: false, default: {} }
+    centres: { type: Object, required: false, default: {} },
+    centreDropDown: { type: Object, required: false, default: {} }
 }, {
     collection: 'examoccurences',
     timestamps: true
