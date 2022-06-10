@@ -6,7 +6,8 @@ const aggregatePaginate = require('mongoose-aggregate-paginate');
 const Schema = mongoose.Schema;
 
 const PageDetail = new Schema({
-  eoId : { type: String, required: true },
+  eoId: { type: String, required: true },
+  pageData: { type: Object },
   page: { type: String, required: true },
   heading: String,
   first_fold_data: Object,
@@ -19,6 +20,7 @@ const PageDetail = new Schema({
   faq: Object,
   register_popup: Object,
   login_popup: Object,
+  data: Array,
   active: { type: Boolean, required: true },
 }, {
   collection: 'pagedetails',
