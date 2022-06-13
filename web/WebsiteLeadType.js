@@ -11,7 +11,8 @@ const WebsiteLeadType = new Schema({
     updatedAt:Date,
     createdBy:String,
     updatedBy:String,
-    propectId:String
+    propectId:String,
+    mx_Byjus_Learning_Centre:String,
 }, {
     timestamps: true,
     collection: 'website_lead_types'
