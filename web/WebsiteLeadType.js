@@ -10,7 +10,8 @@ const WebsiteLeadType = new Schema({
     createdAt:Date,
     updatedAt:Date,
     createdBy:String,
-    updatedBy:String
+    updatedBy:String,
+    propectId:String
 }, {
     timestamps: true,
     collection: 'website_lead_types'
