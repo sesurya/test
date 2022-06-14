@@ -88,6 +88,9 @@ const LeadRegistration = new Schema({
 
     c1h2e3c4k5d6u7p8l9i1c2a3t4e5: String,
 
+    propectId:String,
+    mx_Byjus_Learning_Centre:String,
+
     mx_FB_Source_Campaign: String,
     mx_utm_Term: String,
     mx_Gclid: String,
