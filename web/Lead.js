@@ -93,7 +93,7 @@ const Lead = new Schema({
     isCronJobRan: Boolean,
     lsRequestID: String,
     lastRunCronJobDate: Date,
-
+    prospectId: String,
     createdAt: Date,
     updatedAt: Date,
 }, {
