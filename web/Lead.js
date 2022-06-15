@@ -90,6 +90,10 @@ const Lead = new Schema({
 
     countryCode: String,
 
+    centerName: String,
+    mx_School:String,
+    schoolUniversalId: String,
+
     isCronJobRan: Boolean,
     lsRequestID: String,
     lastRunCronJobDate: Date,
