@@ -16,7 +16,8 @@ const PackageBatch = new Schema({
     createdBy: String,
     updatedBy: String,
     notifyEmails: [String],
-    message: { type: String }
+    message: { type: String },
+    qrCodeRequired: { type: Boolean, required: true }
 }, {
     collection: 'package_batches',
     timestamps: true
