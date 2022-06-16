@@ -16,7 +16,7 @@ const Lead = new Schema({
     pincode: String,
     EmailAddress: String,
     Website: String,
-    WebsiteLeadType:String, 
+    WebsiteLeadType: String,
     mx_Course_Name: String,
     mx_Topic_Name: String,
     mx_Session_Date: String,
@@ -62,7 +62,7 @@ const Lead = new Schema({
     mx_Gender: String,
     slugName: String,
     referralUrl: String,
-    utm_campaign: String ,
+    utm_campaign: String,
     utm_median: String,
 
     mx_Corporate_Name: String,
@@ -91,8 +91,12 @@ const Lead = new Schema({
     countryCode: String,
 
     centerName: String,
-    mx_School:String,
+    mx_School: String,
     schoolUniversalId: String,
+
+    medium_of_institution: String,
+    school_grade: String,
+    school_verified_status: String,
 
     isCronJobRan: Boolean,
     lsRequestID: String,
