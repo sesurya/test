@@ -10,9 +10,17 @@ const Campaign = new Schema({
     campaign_name: { type: String, required: true },
     formattedName: { type: String, required: true, unique: true },
     codePrefix: { type: Number, required: true, unique: true },
-    amount: { type: Number, required: true },
+    amount: { type: Number },
     channel: { type: String, required: true },
     gstNumber: { type: String },
+    serialNoLen: { type: Number },
+    maxRedemptions: { type: Number },
+    mobileVerification: { type: Boolean },
+    emailVerification: { type: Boolean },
+    pageLayout: {
+        offerDescription: { type: String },
+        partnerLogoPath: { type: String },
+    },
     address: {
         country: { type: String },
         state: { type: String  },
