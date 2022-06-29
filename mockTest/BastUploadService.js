@@ -8,6 +8,7 @@ const Schema = mongoose.Schema;
 const BastUploadService = new Schema({
   uploadedBy: String,
   filename: String,
+  formattedName: String,
   url: String,
   status: String,
 }, {
