@@ -9,6 +9,7 @@ const BastUploadService = new Schema({
   uploadedBy: String,
   filename: String,
   url: String,
+  status: String,
 }, {
   collection: 'bastuploadservices',
   timestamps: {
