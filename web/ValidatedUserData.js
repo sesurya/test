@@ -8,7 +8,7 @@ const Schema = mongoose.Schema;
 const ValidatedUserData = new Schema({
   type: String,
   name: String,
-  mobile: Number,
+  mobile: String,
   email: String,
   grade: String,
   city: String,
