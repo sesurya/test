@@ -8,13 +8,12 @@ const Schema = mongoose.Schema;
 const BastUploadService = new Schema({
   uploadedBy: String,
   filename: String,
+  formattedName: String,
   url: String,
+  status: String,
 }, {
   collection: 'bastuploadservices',
-  timestamps: {
-    createdAt: 'created_at',
-    updatedAt: 'updated_at',
-  },
+  timestamps: true,
 });
 
 BastUploadService.plugin(paginate);
