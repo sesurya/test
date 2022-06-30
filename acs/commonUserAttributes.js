@@ -4,6 +4,7 @@ const Schema = mongoose.Schema;
 
 const stateValue = new Schema({
     adminArea: {type: String, required: true},
+    city: {type: String},
   });
   
   const consentValues = new Schema({
