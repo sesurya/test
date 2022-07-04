@@ -103,6 +103,8 @@ const LeadRegistration = new Schema({
 
     premiumId: String,
 
+    draftOrderId: String,
+
     medium_of_institution: String,
     school_grade: String,
     school_verified_status: String,
