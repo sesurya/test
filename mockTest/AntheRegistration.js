@@ -25,8 +25,8 @@ const AntheRegistration = new Schema({
 }, {
   collection: 'antheregistrations',
   timestamps: {
-    createdAt: 'registeredOn',
-    updatedAt: 'updated_at',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt',
   },
 });
 
