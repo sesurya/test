@@ -22,6 +22,7 @@ const OrderRegistration = new Schema({
   paymentLink: { type: String, required: false },
   price: { type: Number, required: false, default: 0 },
   productCode: {type: String,  required: false},
+  skuId: {type: String,  required: true},
   lsRequestId: { type: String, required: false },
   prospectId: { type: String, required: false },
   paidAt: {type: Date, required: false},
