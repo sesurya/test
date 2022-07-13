@@ -10,6 +10,7 @@ const Product = new Schema({
   status: { type: String, required: true },
   productCode: { type: String, required: true },
   productType: { type: String, required: true },
+  skuId: { type: String, required: true },
   name: { type: String, required: true },
   price: { type: Number, required: false, default: 0 },
   description: {type: String, required: false},
