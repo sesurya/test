@@ -6,13 +6,17 @@ const aggregatePaginate = require('mongoose-aggregate-paginate');
 const Schema = mongoose.Schema;
 
 const MsgTemplate = new Schema({
-    category: String,
-    type: String,
-    message: String,
-    smsServiceProvider: Number,
-    
+    category: { type: String, required: true },
+    type: { type: String, required: true, unique: true },
+    message: { type: String, required: true },
+    smsServiceProvider: { type: Number, required: true },
+    createdBy: { type: String },
+    updatedBy: { type: String }
 }, {
-    timestamps: true,
+    timestamps: {
+        createdAt: 'createdAt',
+        updatedAt: 'updatedAt',
+      },
     collection: 'msgtemplates'
 });
 
