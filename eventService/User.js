@@ -20,7 +20,6 @@ const User = new Schema({
   grade: { type: String, required: true },
   password: { type: String, required: true },
   hashedPassword: { type: String, required: true },
-  eoGroupId: { type: String, required: true }, // uuid
   isActive: Boolean,
 }, {
   collection: 'users',
