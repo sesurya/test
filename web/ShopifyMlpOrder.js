@@ -11,6 +11,8 @@ const ShopifyMlpOrder = new Schema({
     customerLastName: String,
     customerEmail: String,
     customerPhone: Number,
+    totalPrice: String,
+    checkoutId: Number,
     createdAt: String,
     cart: Object
 }, {
