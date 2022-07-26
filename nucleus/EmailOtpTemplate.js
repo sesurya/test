@@ -6,12 +6,12 @@ const aggregatePaginate = require('mongoose-aggregate-paginate');
 const Schema = mongoose.Schema;
 
 const EmailOtpTemplate = new Schema({
-  templateGroup: { type: String, required: true, unique:true },
-  imageUrl: { type: String },
-  emailTemplateSubject: { type: String },
-  emailTemplateFirstLine: { type: String },
-  senderEmailId: { type: String },
-  emailBodyHtml: { type: String },
+  templateId: { type: String, required: true, unique:true },      // Campaign Name
+  imageUrl: { type: String },                                     // Specific Logo for the campaign if needed
+  emailTemplateSubject: { type: String },                         // Specific Subject Line if needed
+  emailTemplateFirstLine: { type: String },                       // Specific First Line if needed
+  senderEmailId: { type: String },                                // Specific Sender's email if needed
+  emailBodyHtml: { type: String },                                // Specific email body if needed
   createdBy: { type: String },
   updatedBy: { type: String }
 }, {
