@@ -21,6 +21,9 @@ const Campaign = new Schema({
         offerDescription: { type: String },
         partnerLogoPath: { type: String },
     },
+    inboundCampaignPageLayout: {
+        offerDescription: { type: String }
+    },
     address: {
         country: { type: String },
         state: { type: String  },
