@@ -17,11 +17,12 @@ const Campaign = new Schema({
     maxRedemptions: { type: Number },
     mobileVerification: { type: Boolean },
     emailVerification: { type: Boolean },
+    //isValidatorRequired: { type: Boolean, required: true },
+    //product: { type: String, required: true },
     pageLayout: {
-        offerDescription: { type: String },
+        campaignDescription: { type: String },
         partnerLogoPath: { type: String },
-    },
-    inboundCampaignPageLayout: {
+        uniqueValidatorLabel: { type: String },
         offerDescription: { type: String }
     },
     address: {
@@ -32,7 +33,6 @@ const Campaign = new Schema({
         addressLine1: { type: String }
     },
         }, 
-
  {
     collection: 'campaigns',
     timestamps: {
